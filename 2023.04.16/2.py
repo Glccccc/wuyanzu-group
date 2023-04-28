@@ -12,15 +12,15 @@ if num_1.isdecimal() and num_2.isdecimal():
     else:         
         # СДЕЛАТЬ: подумайте и перепишите нижеследующую часть кода так, чтобы обойтись только одним блоком elif
         # КОММЕНТАРИЙ: скобки не нужны, их можно опустить
-        remainder_modulo = num_1 % num_2        
-        result = (f'{num_1} делится на {num_2} нацело\n'
-                  f'частное: {num_1 // num_2}\n')
-        if remainder_modulo:
-            result = (f'{num_1} не делится на {num_2} нацело\n'
-                      f'неполное частное: {num_1 // num_2}\n'
-                      # ИСПРАВИТЬ: вы уже вычисляли остаток, а здесь повторно выполняете ту же операцию — неоптимально
-                      f'остаток: {remainder_modulo}')
-        print(result)
+        # remainder_modulo = num_1 % num_2  вместо этого используем моржовый оператор
+        add1, add2, add3 = '','',''
+        
+        if remainder_modulo := num_1 % num_2:
+            add1, add2, add3 = 'не ', 'неполное ', f'остаток: {remainder_modulo}'
+           
+        print(f'{num_1} {add1}делится на {num_2} нацело\n'
+              f'{add2}частное: {num_1 // num_2}\n'
+              f'{add3}')
 else:
     print('Ошибка, некорректный ввод')
 
