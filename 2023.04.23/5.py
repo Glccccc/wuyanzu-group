@@ -1,13 +1,13 @@
-text = input('Введите текс: ')
+text = input('Введите текст: ')
 price = 30
-
-for i in range((len(text)) - 1):
+total_price = 0
+for i in range(len(text)):
     if text[i] == ' ':
         continue
     else:
-        price += 30
+        total_price += price
 
-print(f'{price // 100} руб. {price % 100} коп.')
+print(f'{total_price // 100} руб. {total_price % 100} коп.')
 
 # Введите текс: грузите       апельсины       бочках     братья         карамазовы
 # 11 руб. 40 коп.

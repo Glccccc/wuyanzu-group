@@ -3,7 +3,7 @@ summa_positiv = 0
 
 for i in range(numbers_count):
     num = int(input('Введите число: '))
-    if num > 0:
+    if num > 0:        
         summa_positiv += num
 
 print(summa_positiv)
