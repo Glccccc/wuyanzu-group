@@ -1,10 +1,10 @@
 num_position = int(input('Введите разряд числа: '))
-max_num = int(num_position*'9')
+max_num = int(num_position * '9')
 count_numbers = 0
 
 for num in range((max_num + 1) // 10, max_num + 1):
     i = 2
-    while i*i <= num:
+    while i * i <= num:
         if not num % i:
             break
         i += 1
