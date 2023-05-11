@@ -1,7 +1,7 @@
 dict_inp = {}
 
 while True:
-    dict_pair = input(' Введите число и строку через пробел: ').split()
+    dict_pair = input(' Введите ключ и значение через пробел: ').split()
     
     if not dict_pair:
         break
@@ -10,8 +10,8 @@ while True:
 
 inp_value = input(' Введите значение из словаря: ')
 
-if (key_ := {i for i in dict_inp  if dict_inp[i] == inp_value}):
-    print(*key_)
+if key := {k for k in dict_inp  if dict_inp[k] == inp_value}:
+    print(*key)
 else:
     print('! value error !')
     
@@ -26,3 +26,12 @@ else:
 
 # Введите строку из словаря: киви
 # ! value error !
+
+
+# 123 груша
+# 124 груша
+# 125 манго
+# 126 слива
+# 127 арбуз
+# Введите значение из словаря: груша
+# 123 124
