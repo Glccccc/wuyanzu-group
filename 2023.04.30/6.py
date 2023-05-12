@@ -17,7 +17,7 @@ elif len(inp_num) >= 2:
     else:
         print('Нет')
 else:
-        print('Нет')
+    print('Нет')
 
 # Введите число: 0101
 # Да
