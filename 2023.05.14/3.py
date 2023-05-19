@@ -7,7 +7,7 @@ def numbers_strip(numbers: list[float], n=1, *, copy=False):
         min_num = min(numbers)
         
         for i in numbers:
-            if max)num == i:
+            if max_num == i:
                 numbers.remove(max(numbers))
             elif min_num == i:
                 numbers.remove(min(numbers))
@@ -23,9 +23,9 @@ def numbers_strip(numbers: list[float], n=1, *, copy=False):
 # >>> nums_test= numbers_strip(nums, 3, copy=True)
 # >>> nums_test
 # [40]
-# >>> sample is nums_test
+# >>> nums is nums_test
 # False
-
+# >>>
 # >>> sample = [1,2,3,4,5,6,7]
 # >>> nums_test= numbers_strip(sample)
 # >>> nums_test
