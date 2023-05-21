@@ -5,15 +5,17 @@ def taxi_cost(route_length, waiting_time: int | int=0) -> int | None:
     base_cost = 80
     time_cost = waiting_time * 3
     lenght_cost = route_length / 150 * 6
-   
+    find = 80
+    
     if route_length < 0 or waiting_time < 0:
         return None
     if route_length == 0:
-        return base_cost * 2  + time_cost
+        return base_cost + find  + time_cost
     if route_length < 150:
         return base_cost + time_cost
     else:
         return round(base_cost + lenght_cost + time_cost)
+                     
        
            
 # делала через переменные на случай если будет изменение тарифов))

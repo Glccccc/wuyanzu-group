@@ -1,16 +1,10 @@
-def numbers_strip(numbers: list[float], n=1, *, copy=False):
+def numbers_strip(numbers: list[float], n=1, *, copy=False) -> list:
 
     """Удаляет n минимальных и n максимальных чисел из списка, возвращает исходный объект списка с внесёнными изменениями или изменённую копию"""
     
-    while n>0:
-        max_num = max(numbers)
-        min_num = min(numbers)
-        
-        for i in numbers:
-            if max_num == i:
-                numbers.remove(max(numbers))
-            elif min_num == i:
-                numbers.remove(min(numbers))
+    while n > 0:
+        numbers.remove(max(numbers))
+        numbers.remove(min(numbers))
         n -= 1 
         
     if copy:
