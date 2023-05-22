@@ -1,4 +1,4 @@
-def central_tendency(num1: float, num2: float, / ,*numbers: float) -> dict[str, float]:
+def central_tendency(num1: float, num2: float, / , *numbers: float) -> dict[str, float]:
     
     """Вычисляет и возвращает словарь с подписанными вычисленными значениями мер центральной тенденции"""
 
@@ -12,12 +12,12 @@ def central_tendency(num1: float, num2: float, / ,*numbers: float) -> dict[str, 
     if length_numbers % 2:
         median = float(numbers[middle_index])
     else:
-        median = sum(numbers[middle_index - 1:middle_index + 1]) / 2
+        median = sum(numbers[middle_index - 1 : middle_index + 1]) / 2
         
     for i in numbers:       
         product *= i 
         numerator += 1 / i
-        geometric = product ** (1/length_numbers)
+        geometric = product ** (1 / length_numbers)
         harmonic = length_numbers / numerator
     
     dict_tendency = {

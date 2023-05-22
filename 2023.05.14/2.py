@@ -1,4 +1,4 @@
-def taxi_cost(route_length, waiting_time: int | int=0) -> int | None:
+def taxi_cost(route_length: int, waiting_time: int = 0) -> int | None:
 
     """Вычисляет и возвращает стоимость поездки, если вычисление невозможно возвращает None"""
     

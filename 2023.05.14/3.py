@@ -1,4 +1,4 @@
-def numbers_strip(numbers: list[float], n=1, *, copy=False) -> list:
+def numbers_strip(numbers: list[float], n: int = 1, *, copy: bool = False) -> list:
 
     """Удаляет n минимальных и n максимальных чисел из списка, возвращает исходный объект списка с внесёнными изменениями или изменённую копию"""
     
