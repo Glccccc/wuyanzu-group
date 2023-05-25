@@ -1,13 +1,15 @@
 numbers_count = int(input('Введите количество чисел: '))
 summa_positiv = 0
 
-for i in range(numbers_count):
+# ИСПОЛЬЗОВАТЬ: когда переменная цикла не используется, то её заменяют символом _
+for _ in range(numbers_count):
     num = int(input('Введите число: '))
-    if num > 0:        
+    if num > 0:
         summa_positiv += num
 
 print(summa_positiv)
-    
+
+
 # Введите количество чисел: 5
 # Введите число: -10
 # Введите число: 2
@@ -16,10 +18,14 @@ print(summa_positiv)
 # Введите число: 0
 # 32
 
+
+# КОММЕНТАРИЙ: цикл for в данном случае как-то поизящнее выглядит — хотя порой действительно возникает необходимость управлять счётчиком заметно более сложным образом
 # while numbers_count > 0:    
     # num = int(input('Введите число: '))
     # if num > 0:
         # summa_positiv += num
     # numbers_count -= 1
-    
 # print(summa_positiv)
+
+
+# ИТОГ: отлично — 3/3
