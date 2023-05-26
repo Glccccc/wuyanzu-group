@@ -5,9 +5,11 @@ files_dict = {}
 
 for f in files_list:
     files_dict[f] = files_dict.get(f, 0) + 1
+    # КОММЕНТАРИЙ: хорошо, что в один цикл пошли
     if files_dict[f] == 1:
         files_list_new.append(f)
     else:
+        # ИСПРАВИТЬ: метод find() вызывается лишний раз — оптимизируйте
         files_list_new.append(f[:f.find(".")] + "_" + f'{files_dict[f]}' + f[f.find("."):])
 
 print(*sorted(files_list_new), sep="\n")
@@ -25,3 +27,5 @@ print(*sorted(files_list_new), sep="\n")
 # src.tar.gz
 # src_2.tar.gz
 
+
+# ИТОГ: очень хорошо, требуется немного доработать — 4/5
