@@ -11,10 +11,7 @@ def strong_password(password: str) -> bool:
     chars_set = set('!\"#$%&\'()*+,-./:;<=>?@[\\]^_`\{\|\}~ ')
     total_set = lower_set | upper_set | digit_set | chars_set
     
-    if len(password) < 8:
-        return False
-        
-    if password_set <= total_set:
+    if password_set <= total_set and len(password) >= 8:
         digit_count = 0
         
         for char in password:
@@ -29,10 +26,9 @@ def strong_password(password: str) -> bool:
             digit_count >= 2
         ):
             return True
-        else:
-            return False
     else:
         return False
+ 
 
 # >>> strong_password('lili_56kad')
 # False
