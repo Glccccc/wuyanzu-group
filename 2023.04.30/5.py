@@ -13,10 +13,16 @@ word_inp = input(' Введите слово: ').upper().replace('Ё', 'Е')
 
 scores_word = 0
 
-print(sum(scores_word + k for i in word_inp for k, v in scores_letters.items() if i in v))
+print(sum(
+    scores_word + k
+    for i in word_inp for k, v in scores_letters.items()
+    if i in v
+))
+
 
 # Введите слово: синхрофазотрон
 # 29
 
 # Введите слово: ёжик
 # 9
+

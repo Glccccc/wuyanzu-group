@@ -40,7 +40,11 @@ for dicts in list_of_dicts:
         else:
             dict_combined[k] = {v}
 
-print(*{f'{k!r}: {v}' for k, v in dict_combined.items()}, sep=',\n')
+print(*{
+    f'{k!r}: {v}'
+    for k, v in dict_combined.items()
+}, sep=',\n')
+
 
 # 'Махачкала': {5},
 # 'Ульяновск': {4, 7},
@@ -59,3 +63,4 @@ print(*{f'{k!r}: {v}' for k, v in dict_combined.items()}, sep=',\n')
 # 'Липецк': {1},
 # 'Краснодар': {9, 4},
 # 'Тула': {2, 3}
+

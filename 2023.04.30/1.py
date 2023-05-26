@@ -1,12 +1,17 @@
 email_inp = input(' Введите адрес электронной почты: ')
-# адрес электронной почты не может начинатсья или заканчиватся с '.' , '@'. Cимвол '@' должен быть только один, и после него должен быть символ '.'
+# адрес электронной почты не может начинаться или заканчиваться с '.' или '@'
+# символ '@' должен быть только один, и после него должен быть символ '.'
 # если еще проверять что содержит только латинские буквы, цифры, определенные символы, тогда решаем через множества
-latin_chars_digit = {chr(code) for code in range(97, 123)} |\
-                    {'@','.','!','#','$','%','&','*','+','-','/','=','?','^','_','`','{','|','}','~'} |\
-                    {str(digit) for digit in range(0, 10)}
-                  
-email_set = set((email_inp).lower())
-if (email_set < latin_chars_digit): 
+
+latin_chars_digit = (
+      {chr(code) for code in range(97, 123)}
+    | set('@.!#$%&*+-/=?^_`{|}~')
+    | {str(digit) for digit in range(0, 10)}
+)
+
+# ИСПОЛЬЗОВАТЬ везде: круглые скобки вокруг выражений нужны либо для многострочной записи, либо для изменения приоритетов операторов — в остальных случаях не нужны
+email_set = set(email_inp.lower())
+if email_set < latin_chars_digit:
     if (
             email_inp[0] != '@'
         and email_inp[0] != '.'
@@ -15,13 +20,14 @@ if (email_set < latin_chars_digit):
         and email_inp.count('.') > 0
         and email_inp.rindex('.') > email_inp.index('@')
         and email_inp.rindex('.') != email_inp.index('@') + 1
-    ):  
+    ):
         print('Да')
     else:
         print('Нет')
 else:
     print('Нет')
-    
+
+
 # рафикова@mail.ru
 # Нет
 
