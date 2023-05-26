@@ -5,8 +5,10 @@ def strong_password(password: str) -> bool:
     password_set = set(password)
     lower_set = {chr(code) for code in range(97, 123)}
     upper_set = {chr(code) for code in range(65, 91)}
-    digit_set = {str(digit) for digit in range(0, 10)}
-    chars_set = {'!','"','#','$','%','&','\'','(',')','*','+',',','-','.','/',':',';','<','=','>','?','@','[','\\',']','^','_','`','\{','\|','\}','~',' '}
+    # digit_set = {str(digit) for digit in range(0, 10)}
+    digit_set = set('0123456789')
+    # chars_set = {'!','"','#','$','%','&','\'','(',')','*','+',',','-','.','/',':',';','<','=','>','?','@','[','\\',']','^','_','`','\{','\|','\}','~',' '}
+    chars_set = set('!\"#$%&\'()*+,-./:;<=>?@[\\]^_`\{\|\}~ ')
     total_set = lower_set | upper_set | digit_set | chars_set
     
     if len(password) < 8:
