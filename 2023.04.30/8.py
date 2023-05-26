@@ -10,7 +10,8 @@ for f in files_list:
         files_list_new.append(f)
     else:
         # ИСПРАВИТЬ: метод find() вызывается лишний раз — оптимизируйте
-        files_list_new.append(f[:f.find(".")] + "_" + f'{files_dict[f]}' + f[f.find("."):])
+        index_occurrence = f.find(".")
+        files_list_new.append(f[:index_occurrence] + "_" + f'{files_dict[f]}' + f[index_occurrence:])
 
 print(*sorted(files_list_new), sep="\n")
 

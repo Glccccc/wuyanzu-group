@@ -36,7 +36,7 @@ dict_combined = {}
 for dicts in list_of_dicts:
     for k, v in dicts.items():
         # ИСПРАВИТЬ: используйте словарные методы вместо явной проверки наличия ключа в словаре
-        if k in dict_combined:
+        if dict_combined.get(k):
             dict_combined[k] |= {v}
         else:
             dict_combined[k] = {v}
