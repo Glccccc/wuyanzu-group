@@ -17,8 +17,9 @@ def central_tendency(num1: float, num2: float, / , *numbers: float) -> dict[str,
     for i in numbers:       
         product *= i 
         numerator += 1 / i
-        geometric = product ** (1 / length_numbers)
-        harmonic = length_numbers / numerator
+        
+    geometric = product ** (1 / length_numbers)
+    harmonic = length_numbers / numerator
     
     dict_tendency = {
                 'median': median,
@@ -32,8 +33,10 @@ def central_tendency(num1: float, num2: float, / , *numbers: float) -> dict[str,
 # >>> sample = [1, 2, 3, 4, 5]
 # >>> central_tendency(*sample)
 # {'median': 3.0, 'arithmetic': 3.0, 'geometric': 2.605171084697352, 'harmonic': 2.18978102189781}
-# >>>
-
+# >>> 
 # >>> central_tendency(1, 2, 3, 4)
 # {'median': 2.5, 'arithmetic': 2.5, 'geometric': 2.2133638394006434, 'harmonic': 1.9200000000000004}
+# >>>
+# >>> central_tendency(1, 2, 3, 4,5,6)
+# {'median': 3.5, 'arithmetic': 3.5, 'geometric': 2.993795165523909, 'harmonic': 2.4489795918367347}
 # >>>
