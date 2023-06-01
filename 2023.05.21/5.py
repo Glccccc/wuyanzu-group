@@ -8,9 +8,7 @@ def logger(function: 'callable') -> 'callable':
                 
         if function.__defaults__ is not None:
             for def_arg in function.__defaults__:
-                if function.__code__.co_argcount == len(args):
-                    pass
-                else:
+                if function.__code__.co_argcount != len(args):
                     arguments += [f'{def_arg}']                    
                
         if function.__kwdefaults__ is not None:
@@ -26,7 +24,7 @@ def logger(function: 'callable') -> 'callable':
             print(f'\n\t{type(exception).__name__}:', str(exception))
              
     return wrapper
-    
+   
 # >>> def div_round(num1, num2, *, digits=0):
 # ...     return round(num1 / num2, digits)
 # ...
