@@ -4,7 +4,7 @@ def deck() -> 'generator':
     
     card_suit = ['черви', 'бубны', 'пики', 'трефы']
     
-    for suit in  card_suit:
+    for suit in card_suit:
         for n in range (2, 15):        
             yield (n, suit)
     
