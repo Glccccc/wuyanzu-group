@@ -21,16 +21,15 @@ def pick_resistors(resistance: int) -> dict[str, tuple[int]] | None:
 
     """Возвращает словарь, значения которого являются объектами типа tuple  и содержат ближайшие к переданному номиналы сопротивления из всех рядов сопротивлений.
         Если значение сопротивления вне диапазона от 100 до 999 включительно - возвращает None"""
-    
-    if resistance < 100 or resistance > 999:
-        return None
         
-    dict_result = {}
+    if 100 < resistance < 999:
     
-    for key in nominals:
-        dict_result[key] = tuple(filter(lambda val: abs(val - resistance) == min(map(lambda val: abs(val- resistance), nominals[key])), nominals[key]))
+        dict_result = {}
         
-    return dict_result   
+        for key in nominals:
+            dict_result[key] = tuple(filter(lambda val: abs(val - resistance) == min(map(lambda val: abs(val- resistance), nominals[key])), nominals[key]))
+            
+        return dict_result   
         
 
 
