@@ -18,14 +18,13 @@ def strong_password(password: str) -> bool:
             if char.isdigit():
                 digit_count += 1
             
-        if (
+        return bool(
             password_set & upper_set and
             password_set & lower_set and
             password_set & digit_set and
             password_set & chars_set and
             digit_count >= 2
-        ):
-            return True
+        )
     else:
         return False
  
