@@ -19,10 +19,12 @@ def logger(function: 'callable') -> 'callable':
         print(f'{function.__name__}({", ".join(arguments)}) -> ', end = '')
             
         try: 
-            print(result := function(*args, **kwargs), result, sep = '\n')
+            print(result := function(*args, **kwargs))
         except Exception as exception:
             print(f'\n\t{type(exception).__name__}:', str(exception))
-             
+         
+        return result
+        
     return wrapper
    
 # >>> def div_round(num1, num2, *, digits=0):
