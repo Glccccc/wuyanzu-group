@@ -20,10 +20,9 @@ def logger(function: 'callable') -> 'callable':
             
         try: 
             print(result := function(*args, **kwargs))
+            return result
         except Exception as exception:
             print(f'\n\t{type(exception).__name__}:', str(exception))
-         
-        return result
         
     return wrapper
    
