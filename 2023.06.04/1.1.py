@@ -2,7 +2,7 @@ from collections.abc import Iterable
 
 def product(numbers: Iterable[float]) -> float:
     
-    # """Рекурсивная функция, которая возвращает произведение чисел"""
+    """Рекурсивная функция, которая возвращает произведение чисел"""
     
     if not numbers:
         return 1.0
