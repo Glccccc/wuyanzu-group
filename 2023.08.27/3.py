@@ -114,7 +114,7 @@ class CVBuilder:
 
     def add_contact(self, name_contact: str, contact: str) -> 'CVBuilder':
        
-        """Добавляет контакт в список контактов"""
+        """Добавляет контакт в словарь контактов"""
        
         self.contacts |= [(name_contact, contact)]
         return self
@@ -163,4 +163,32 @@ cv1 = CVBuilder('Рафикова Лилия Маратовна', 33, 'Web-ра�
 
 print(cv1)        
 
-(Path(path[0]) / '3.html').write_text(str(cv1), encoding='utf-8')
+# (Path(path[0]) / '3.html').write_text(str(cv1), encoding='utf-8')
+
+# <html>
+  # <head>
+    # <meta charset="utf-8"></meta>
+    # <meta content="width=device-width, initial-scale=1.0"></meta>
+    # <title>Портфолио: Рафикова Лилия Маратовна</title>
+  # </head>
+  # <body style="margin-left:10px">
+    # <div id="about">
+      # <h1>Портфолио</h1>
+      # <h2 style="color:red">Рафикова Лилия Маратовна</h2>
+      # <p style="color:blue">Web-разработчик, 33 года</p>
+      # <p style="color:blue">email : rlm@mail.ru, telegram : @liliya, mobile : 987654321</p>
+      # <p>Образование: ТОР-академия, Python, 2023</p>
+      # <div style="margin-left:30px; text-decoration:underline">Benefits of python</div>
+      # <br>
+        # <img src="3.1.png" width="250px" height="250px"></img>
+        # <br></br>
+      # </br>
+      # <div style="margin-left:30px; text-decoration:underline">Сайт для туристического оператора</div>
+      # <br>
+        # <img src="3.2.png" width="250px" height="250px"></img>
+        # <br></br>
+      # </br>
+    # </div>
+  # </body>
+# </html>
+# >>>
