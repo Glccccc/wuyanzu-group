@@ -94,7 +94,7 @@ class CVBuilder:
         self.projects: list[tuple[str, tuple]] = []
         self.contacts: dict[str, str] = {"email": email}
       
-    def add_education(self, university: str, profession: str, year_end: int) -> 'CVBuilder':
+    def add_education(self, university: str, profession: str, year_end: int) -> Self:
         
         """Добавляет информацию об университете, профессии и годе окончания"""
         
@@ -104,7 +104,7 @@ class CVBuilder:
         return self
 
   
-    def add_project(self, name: str, *images: str) -> 'CVBuilder':
+    def add_project(self, name: str, *images: str) -> Self:
         
         """Добавляет проект в список проектов"""
         
@@ -112,7 +112,7 @@ class CVBuilder:
         return self
 
 
-    def add_contact(self, name_contact: str, contact: str) -> 'CVBuilder':
+    def add_contact(self, name_contact: str, contact: str) -> Self:
        
         """Добавляет контакт в словарь контактов"""
        
@@ -163,7 +163,7 @@ cv1 = CVBuilder('Рафикова Лилия Маратовна', 33, 'Web-ра�
 
 print(cv1)        
 
-# (Path(path[0]) / '3.html').write_text(str(cv1), encoding='utf-8')
+(Path(path[0]) / '3.html').write_text(str(cv1), encoding='utf-8')
 
 # <html>
   # <head>

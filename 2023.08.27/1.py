@@ -4,6 +4,8 @@ class ClassBuilder:
     
     """Формирует текст кода класса"""
     
+    default_indent_spaces: int = 4
+    
     def __init__(self, class_name: str):
         self.class_name = class_name
         self.attrs = []
@@ -29,8 +31,7 @@ class ClassBuilder:
         
         """Возвращает строковое представление объекта ClassBuilder"""
        
-        default_indent_spaces: int = 4
-        indent: str = ' ' *  default_indent_spaces
+        indent: str = ' ' *  self.default_indent_spaces
         field_str: str = ''
         attr_str: str  = ''
         if self.fields:
