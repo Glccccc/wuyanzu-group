@@ -28,8 +28,8 @@ create table collections (
     `date` year,
     style_id tinyint unsigned not null,
     publisher_id smallint unsigned not null,
-    foreign key (performer_id) references performers (id)
-    foreign key (style_id) references styles (id)
+    foreign key (performer_id) references performers (id),
+    foreign key (style_id) references styles (id)  ,
 	foreign key (publisher_id) references publishers (id)
 );
 
@@ -40,7 +40,20 @@ create table songs (
 	collection_id smallint unsigned not null,
     style_id tinyint unsigned not null,
 	duration time not null,
-    foreign key (performer_id) references performers (id)
-	foreign key (collection_id) references collection (id)
+    foreign key (performer_id) references performers (id),
+	foreign key (collection_id) references collections (id),
 	foreign key (style_id) references styles (id)
 );
+
+
+ -- MySQL  localhost:3306 ssl  mus_library  SQL > \. 2.2.sql
+-- Query OK, 4 rows affected (0.0472 sec)
+-- Query OK, 1 row affected (0.0021 sec)
+-- Default schema set to `mus_library`.
+-- Fetching global names, object names from `mus_library` for auto-completion... Press ^C to stop.
+-- Query OK, 0 rows affected (0.0391 sec)
+-- Query OK, 0 rows affected (0.0249 sec)
+-- Query OK, 0 rows affected (0.0364 sec)
+-- Query OK, 0 rows affected (0.0481 sec)
+-- Query OK, 0 rows affected (0.0397 sec)
+ -- MySQL  localhost:3306 ssl  mus_library  SQL >
