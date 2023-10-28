@@ -1,15 +1,17 @@
 from datetime import datetime as dt
-    
+
+
 def logger(function: 'callable') -> 'callable':
 
-    """Фукнкция декоратор, который в стандартном потоке вывода ведёт журнал вызовов декорируемой функции"""
+    """Функция декоратор, который в стандартном потоке вывода ведёт журнал вызовов декорируемой функции"""
           
     def wrapper(*args, **kwargs) -> 'any':
     
+        # ИСПРАВИТЬ: у вас может пройти заметное время от этой временной отметки до начала выполнения декорируемой функции, в том числе и целое количество секунд — в основном потому что между сохранением времени и вызовом функции находится выполнение операций с накопителем
         now = dt.now()
         today = now.strftime('%Y.%m.%d %H:%M:%S')
         
-        arguments =[f'{arg}' for arg in args] + [f'{k}={v}' for k, v in kwargs.items()] 
+        arguments = [f'{arg}' for arg in args] + [f'{k}={v}' for k, v in kwargs.items()]
                 
         if function.__defaults__ is not None:
             for def_arg in function.__defaults__:
@@ -22,10 +24,10 @@ def logger(function: 'callable') -> 'callable':
                     arguments += [f'{k}={v}']
         
         print_log = f'{today} - {function.__name__}({", ".join(arguments)}) -> '
-        
-        with open('data\\function_calls.log', mode = 'a', encoding = 'utf-8') as filein:
+
+        # ИСПРАВИТЬ: относительный путь в функции open() зависит от текущего рабочего каталога (cwd), поэтому лучше использовать абсолютные пути
+        with open('data\\function_calls.log', mode='a', encoding='utf-8') as filein:
             filein.write(print_log)
-             
             try: 
                 result = function(*args, **kwargs)
                 filein.write(f'{result}\n')
@@ -36,7 +38,8 @@ def logger(function: 'callable') -> 'callable':
                 filein.write(f'{log_exception}\n')             
           
     return wrapper
-    
+
+
 # D:\Лилия_мои_доки\Pythom_HW_git\Rafikova\2023.05.28>python -i 5.py
 # >>> def testing_function():
 # ...     pass
@@ -56,3 +59,6 @@ def logger(function: 'callable') -> 'callable':
 # 2023.06.09 09:17:51 - testing_function() -> None
 # 2023.06.09 09:18:26 - div_round(2, 3, digits=4) -> 0.6667
 # 2023.06.09 09:18:33 - div_round(2, 0, digits=4) -> ZeroDivisionError: division by zero
+
+
+# ИТОГ: хорошо, но можно лучше — 4/6

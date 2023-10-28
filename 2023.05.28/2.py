@@ -1,14 +1,9 @@
 from utils import important_message
 
 def main() -> None:
-
     """Запрашивает у пользователя сообщение и выводит его в stdout с помощью функции important_message из другого модуля."""
-    
     text = input(' Введите текст: ')
-    
     print(f'\n{important_message(text)}\n')
-    
-    return None
     
 
 # D:\Лилия_мои_доки\Pythom_HW_git\Rafikova\2023.05.28>python -i 2.py
@@ -31,3 +26,6 @@ def main() -> None:
 #                                                                                                                     #
 #=====================================================================================================================#
 # >>>
+
+
+# ИТОГ: отлично — 4/4

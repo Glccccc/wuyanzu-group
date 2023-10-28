@@ -1,35 +1,37 @@
 from pathlib import Path
 from sys import path
 
-def search_context(keyword: str, *words: str, context: int = 0 ) -> list[dict]:
+
+def search_context(keyword: str, *words: str, context: int = 0) -> list[dict]:
     
     """Осуществляет поиск в текстовых файлах строчек, содержащих ключевые слова"""
         
     dir_path = Path(path[0]) / 'data'
     
     txt_files = [file for file in dir_path.iterdir() if file.suffix == '.txt']
-    words = list(map(lambda x: x.lower(), [keyword] + list(words)))
+    words = list(map(lambda x: x.lower(), (keyword, *words)))
     res_dict = []
      
     for file in txt_files:
         with open(file, encoding='utf-8') as filein:
             lines = [line for line in filein]
-                
+
         for line in lines:
             index_line = 1 + lines.index(line)
             for word in words:
                 if word in line.lower():
-                    text = ''.join(lines[index_line - 1 - context : index_line + context])
+                    text = ''.join(lines[ index_line-1-context : index_line+context ])
                     res_dict.append({
-                                    'keyword': word,
-                                    'filename': file.name,
-                                    'line': index_line,
-                                    'context': context,
-                                    'text': text.strip('\n')
-                                 })
+                        'keyword': word,
+                        'filename': file.name,
+                        'line': index_line,
+                        'context': context,
+                        'text': text.strip('\n')
+                    })
    
     return res_dict 
-    
+
+
 # >>> from pprint import pprint    
 # >>> pprint(search_context('грозном', 'грозный'))
 # [{'context': 0,
@@ -116,3 +118,6 @@ def search_context(keyword: str, *words: str, context: int = 0 ) -> list[dict]:
           # 'ему было думать в эту минуту о чем бы то ни было. Он бы хотел '
           # 'совсем забыться, все забыть, потом проснуться и начать совсем '
           # 'сызнова…'}]
+
+
+# ИТОГ: очень хорошо — 5/5
