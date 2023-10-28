@@ -1,3 +1,4 @@
+# ДОБАВИТЬ: аннотацию элементов возвращаемого списка
 def numbers_strip(numbers: list[float], n: int = 1, *, copy: bool = False) -> list:
 
     """Удаляет n минимальных и n максимальных чисел из списка, возвращает исходный объект списка с внесёнными изменениями или изменённую копию"""
@@ -6,10 +7,10 @@ def numbers_strip(numbers: list[float], n: int = 1, *, copy: bool = False) -> li
         numbers = numbers.copy()
     for _ in range(n):
         numbers.remove(max(numbers))
-        numbers.remove(min(numbers))       
-    
+        numbers.remove(min(numbers))
     return numbers    
-        
+
+
 # >>> nums =[10,20,30,40,50,60,70]
 # >>> nums_test= numbers_strip(nums, 3, copy=True)
 # >>> nums_test
@@ -20,7 +21,6 @@ def numbers_strip(numbers: list[float], n: int = 1, *, copy: bool = False) -> li
 # [10, 20, 30, 40, 50, 60, 70]
 # >>>
 
-
 # >>> nums =[10,20,30,40,50,60,70]
 # >>> nums_test= numbers_strip(nums)
 # >>> nums
@@ -30,3 +30,6 @@ def numbers_strip(numbers: list[float], n: int = 1, *, copy: bool = False) -> li
 # >>> nums
 # [20, 30, 40, 50, 60]
 # >>>
+
+
+# ИТОГ: отлично — 4/4

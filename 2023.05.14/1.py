@@ -27,7 +27,9 @@ def strong_password(password: str) -> bool:
         )
     else:
         return False
- 
+
+# КОММЕНТАРИЙ: интересное решение через множества, но страдает некоторой избыточностью (посимвольная проверка на количество цифр) с одной стороны, и ограниченностью (необходимость явно указывать требуемые символы) с другой стороны
+
 
 # >>> strong_password('lili_56kad')
 # False
@@ -41,5 +43,9 @@ def strong_password(password: str) -> bool:
 # False
 # >>> strong_password('Lili_56a')
 # True
+# КОММЕНТАРИЙ: я бы такой пароль принял )
 # >>> strong_password('РафиковаLiliya_89FM')
 # False
+
+
+# ИТОГ: за оригинальность — 5/5
