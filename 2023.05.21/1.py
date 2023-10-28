@@ -17,20 +17,17 @@ nominals = {
 }
 
 
-def pick_resistors(resistance: int) -> dict[str, tuple[int]] | None:
+def pick_resistors(resistance: int) -> dict[str, tuple[int, ...]] | None:
 
     """Возвращает словарь, значения которого являются объектами типа tuple  и содержат ближайшие к переданному номиналы сопротивления из всех рядов сопротивлений.
         Если значение сопротивления вне диапазона от 100 до 999 включительно - возвращает None"""
-        
+
     if 100 < resistance < 999:
-    
         dict_result = {}
-        
         for key in nominals:
+            # ИСПРАВИТЬ: для одного ряда достаточно единожды вычислить минимальную разность
             dict_result[key] = tuple(filter(lambda val: abs(val - resistance) == min(map(lambda val: abs(val- resistance), nominals[key])), nominals[key]))
-            
-        return dict_result   
-        
+        return dict_result
 
 
 # >>> print(pick_resistors(1))
@@ -44,3 +41,6 @@ def pick_resistors(resistance: int) -> dict[str, tuple[int]] | None:
 # >>> print(pick_resistors(120))
 # {'E6': (100,), 'E12': (120,), 'E24': (120,), 'E48': (121,), 'E96': (121,)}
 # >>>
+
+
+# ИТОГ: хорошо — 5/7

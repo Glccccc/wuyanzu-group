@@ -1,18 +1,24 @@
-def math_function_resolver(math_fun: 'callable', *numbers: tuple[float], strings: bool=False) -> list[float | str]:
+def math_function_resolver(
+        math_fun: 'callable',
+        # ИСПРАВИТЬ: для произвольного кортежа аргументов всегда аннотируется сразу тип элементов
+        *numbers: tuple[float],
+        strings: bool = False
+) -> list[float | str]:
+    """
+    Вычисляет округлённые значения для различных математических функций.
 
-    """Вычисляет округлённые значения для различных математических функций.
     :param math_fun: Вызываемый объект. Принимает один позиционно-ключевой аргумент — число x, для которого необходимо вычислить значение математической функции.
     :param numbers: Кортеж объектов int или float, передаваемых в вызываемый объект
     :param strings: Строго ключевой параметр, передаётся в виде объекта bool, значение по умолчанию False. Возвращает строковое представление результатов вычисления если передано значение True
-    :return: Список результатов вычисления переданной функции."""
-
+    :return: Список результатов вычисления переданной функции.
+    """
     result = []
-    
     for num in numbers:
         result.append(round(math_fun(num), 2))
-            
+    # ИСПРАВИТЬ: ещё один цикл избыточен
     return [str(num) for num in result] if strings else result
-    
+
+
 # >>> math_function_resolver(lambda x: 2**x, *range(1, 3), strings=True)
 # ['2', '4']
 # >>> math_function_resolver(lambda x: 2.72**x, *range(1, 10), strings=True)
@@ -22,3 +28,6 @@ def math_function_resolver(math_fun: 'callable', *numbers: tuple[float], strings
 # >>> math_function_resolver(lambda x: x**3, *(1,2,3,4,5),strings=True)
 # ['1', '8', '27', '64', '125']
 # >>>
+
+
+# ИТОГ: хорошо, но можно лучше — 3/5

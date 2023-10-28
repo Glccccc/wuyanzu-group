@@ -2,7 +2,7 @@ def repeat(function: 'callable') -> 'callable':
 
     """Декоратор, который выполняет декорируемую функцию десять раз"""
     
-    def wrapper(*args, **kwargs) -> 'any':
+    def wrapper(*args, **kwargs):
         for _ in range(10):
             function(*args, **kwargs)
             
@@ -32,3 +32,6 @@ def repeat(function: 'callable') -> 'callable':
 # rafikova
 # rafikova
 # >>>
+
+
+# ИТОГ: отлично — 3/3
