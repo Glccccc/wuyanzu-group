@@ -1,6 +1,6 @@
 use world;
 -- Запросы к таблице country:
- 
+
 -- 1. Вывести названия всех стран Евразии
 select  name
  from country
@@ -32,7 +32,7 @@ where continent = 'Asia' or continent = 'Europe';
 
 
 -- 2. Вывести названия регионов и стран, в которых ожидаемая продолжительность жизни меньше пятидесяти лет
-select region, name 
+select region, name
  from country
 where LifeExpectancy < 50;
 
@@ -93,19 +93,18 @@ where SurfaceArea = (
 select name
  from country
 where continent = "Asia"
-order by population limit 5;
+order by population / surfacearea limit 5;
 
--- +----------+
--- | name     |
--- +----------+
--- | Maldives |
--- | Brunei   |
--- | Macao    |
--- | Qatar    |
--- | Bahrain  |
--- +----------+
--- 5 rows in set (0.0010 sec)
-
+-- +--------------+
+-- | name         |
+-- +--------------+
+-- | Mongolia     |
+-- | Kazakstan    |
+-- | Oman         |
+-- | Turkmenistan |
+-- | Saudi Arabia |
+-- +--------------+
+-- 5 rows in set (0.0032 sec)
 
 -- Запросы к таблице city
 
@@ -151,18 +150,28 @@ order by population;
 
 select name, countrycode
  from city
-where countrycode = 'IND' 
+where countrycode = 'IND'
     and char_length(name) = (
 	select max(char_length(name))
 	from city
 	where countrycode = 'IND'
 	);
- 
+
 -- +--------------------------------+-------------+
 -- | name                           | countrycode |
 -- +--------------------------------+-------------+
 -- | Thiruvananthapuram (Trivandrum | IND         |
 -- +--------------------------------+-------------+
+-- 1 row in set (0.0026 sec)
 
- 
+select name
+ from city
+where countrycode = 'IND'
+order by length(name) desc limit 1;
 
+-- +--------------------------------+
+-- | name                           |
+-- +--------------------------------+
+-- | Thiruvananthapuram (Trivandrum |
+-- +--------------------------------+
+-- 1 row in set (0.0018 sec)
