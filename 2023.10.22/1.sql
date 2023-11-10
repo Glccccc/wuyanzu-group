@@ -1,5 +1,7 @@
 use world;
-
+-- Запросы к таблице country:
+ 
+-- 1. Вывести названия всех стран Евразии
 select  name
  from country
 where continent = 'Asia' or continent = 'Europe';
@@ -28,6 +30,8 @@ where continent = 'Asia' or continent = 'Europe';
 -- +-------------------------------+
 -- 97 rows in set (0.0007 sec)
 
+
+-- 2. Вывести названия регионов и стран, в которых ожидаемая продолжительность жизни меньше пятидесяти лет
 select region, name 
  from country
 where LifeExpectancy < 50;
@@ -68,6 +72,7 @@ where LifeExpectancy < 50;
 -- 28 rows in set (0.0009 sec)
 
 
+-- 3. Вывести название самой крупной по площади страны Африки
 select name
  from country
 where SurfaceArea = (
@@ -83,6 +88,8 @@ where SurfaceArea = (
 -- +-------+
 -- 1 row in set (0.0043 sec)
 
+
+-- 4. Вывести названия пяти азиатских стран с самой низкой плотностью населения
 select name
  from country
 where continent = "Asia"
@@ -98,6 +105,11 @@ order by population limit 5;
 -- | Bahrain  |
 -- +----------+
 -- 5 rows in set (0.0010 sec)
+
+
+-- Запросы к таблице city
+
+-- 5. Вывести в порядке возрастания населения коды стран и названия городов, численность населения которых превышает пять миллионов человек
 
 select CountryCode, name
  from city
@@ -133,6 +145,9 @@ order by population;
 -- | IND         | Mumbai (Bombay)   |
 -- +-------------+-------------------+
 -- 24 rows in set (0.0030 sec)
+
+
+-- 6. Вывести название города в Индии с самым длинным названием
 
 select name, countrycode
  from city
