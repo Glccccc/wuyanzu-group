@@ -71,7 +71,7 @@ wuyanzu-group/
     strong_password('aA1!aA1!') == True  # 符合所有条件 
     ```
     *测试结果：*
-    ![alt text](.\asset\image-2.png)  
+    ![alt text](./asset/image-2.png)  
 
 2. **编写 taxi_cost 函数**  
     *功能：* 计算出租车费用。  
@@ -88,7 +88,7 @@ wuyanzu-group/
    taxi_cost(1500)
     ```
     *测试结果：*
-    ![alt text](.\asset\image-3.png)
+    ![alt text](./asset/image-3.png)
 3. **编写 numbers_strip 函数**  
     *功能：* 从列表中删除 n 个最小和最大数。  
     *参数：*   
@@ -103,7 +103,7 @@ wuyanzu-group/
    nums_test
     ```
     *测试结果：*
-    ![alt text](.\asset\image-4.png)
+    ![alt text](./asset/image-4.png)
 4. **编写 countable_nouns 函数**  
     *功能：* 根据数词选择合适的俄语名词形式。  
     *参数：*   
@@ -115,7 +115,7 @@ wuyanzu-group/
     countable_nouns(1, ("год", "года", "лет"))
     ```
     *测试结果：*
-    ![alt text](.\asset\image-5.png)
+    ![alt text](./asset/image-5.png)
 5. **编写 central_tendency 函数**   
     *功能：* 计算一系列数的中心趋势度量。  
     *参数：* 
@@ -128,7 +128,7 @@ wuyanzu-group/
     central_tendency(1, 2, 3, 4)
     ```   
     *测试结果：* 
-    ![alt text](.\asset\image-6.png)
+    ![alt text](./asset/image-6.png)
 6. **编写 orth_triangle 函数**  
     *功能：* 计算直角三角形的第三边。  
     *参数：*   
@@ -141,6 +141,7 @@ wuyanzu-group/
     orth_triangle(cath1=3, cath2=4)
     ```   
     *测试结果：* 
-    ![alt text](.\asset\image-7.png)
+    ![alt text](./asset/image-7.png)
    
 ### 2023.05.21/文件下的任务、功能及使用方法：
+<!-- by 管立超 -->
