@@ -50,3 +50,139 @@ wuyanzu-group/
 ```
 ## 📮 Project Main Function Description and Screenshots
 <!-- by 管立超 -->
+### Tasks and Instructions for 2023.05.14 Files
+
+1. **Implement the strong_password Function**
+    
+    *Function:* Checks if a password is strong.
+    
+    *Parameters:*
+    - Parameter 1: A required keyword parameter of type str representing the password.
+    
+    *Return Value:*
+    - A bool. Returns True if the password meets the following conditions, otherwise False:
+        - Minimum length of 8 characters.
+        - Contains both uppercase and lowercase Latin letters.
+        - Contains at least two numeric characters.
+        - Contains at least one non-alphanumeric character.
+    
+    *Testing Method:*
+    ```python
+    strong_password('aA1!') == False  # Insufficient length
+    strong_password('aA1!aA1!') == True  # Meets all conditions
+    ```
+    
+    *Test Results:*  
+    ![alt text](./asset/2023.05.14/image-2.png)
+
+2. **Implement the taxi_cost Function**
+    
+    *Function:* Calculates the taxi fare.
+    
+    *Parameters:*
+    - Parameter 1: A required keyword parameter of type int representing the trip distance in meters.
+    - Parameter 2: An optional keyword parameter of type int representing waiting time in minutes, defaulting to 0.
+    
+    *Return Value:*
+    - Returns None if parameters are invalid (e.g., negative values).
+    - Otherwise, calculates and returns the fare (as an integer) based on the rules:
+        - Base fare is 80 rubles.
+        - 6 rubles for every 150 meters.
+        - 3 rubles for every minute of waiting.
+        - If the trip distance is 0 meters (cancellation), a penalty of 80 rubles plus waiting time cost is added.
+        - The final cost is mathematically rounded to the nearest integer.
+    
+    *Testing Method:*
+    ```python
+    taxi_cost(1500)
+    ```
+    
+    *Test Results:*  
+    ![alt text](./asset/2023.05.14/image-3.png)
+
+3. **Implement the numbers_strip Function**
+    
+    *Function:* Removes the n smallest and largest numbers from a list.
+    
+    *Parameters:*
+    - Parameter 1: A required positional-keyword parameter, a list of floats.
+    - Parameter 2: An optional positional-keyword parameter n, defaulting to 1, of type int.
+    - Parameter 3: A strict keyword parameter of type bool, defaulting to False, to decide whether to return the modified original list or a new list.
+    
+    *Return Value:*
+    - Returns the modified original list or a new list based on the requirements.
+    
+    *Testing Method:*
+    ```python
+    nums = [10, 20, 30, 40, 50, 60, 70]
+    nums_test = numbers_strip(nums, 3, copy=True)
+    nums_test
+    ```
+    
+    *Test Results:*  
+    ![alt text](./asset/2023.05.14/image-4.png)
+
+4. **Implement the countable_nouns Function**
+    
+    *Function:* Selects the appropriate Russian noun form based on the numeral.
+    
+    *Parameters:*
+    - Parameter 1: A required parameter of type int representing the numeral.
+    - Parameter 2: A required tuple parameter containing three str elements corresponding to the three forms of the noun.
+    
+    *Return Value:*
+    - Returns the corresponding noun form based on the numeral rules.
+    
+    *Testing Method:*
+    ```python
+    countable_nouns(1, ("год", "года", "лет"))
+    ```
+    *Test Results:*  
+    ![alt text](./asset/2023.05.14/image-5.png)
+
+5. **Implement the central_tendency Function**
+    
+    *Function:* Calculates the measures of central tendency for a set of numbers.
+    
+    *Parameters:*
+    - Parameter 1: Positional parameter 1 of type float.
+    - Parameter 2: Positional parameter 2 of type float.
+    - Parameter 3: Variable number of positional parameters of type float.
+    
+    *Return Value:*
+    - A dictionary containing the following key-value pairs:
+        - 'median': Median (float).
+        - 'arithmetic': Arithmetic mean (float).
+        - 'geometric': Geometric mean (float).
+        - 'harmonic': Harmonic mean (float).
+    
+    *Testing Method:*
+    ```python
+    central_tendency(1, 2, 3, 4)
+    ```
+    
+    *Test Results:*  
+    ![alt text](./asset/2023.05.14/image-6.png)
+
+6. **Implement the orth_triangle Function**
+    
+    *Function:* Calculates the third side of a right-angled triangle.
+    
+    *Parameters:*
+    - Parameter 1: Side length of type int or float.
+    - Parameter 2: Side length of type int or float.
+    - Parameter 3: Hypotenuse of type int or float.  
+    
+    *Return Value:*
+    - Returns the length of the third side (float) if the calculation is possible.
+    - Returns None if the parameters are invalid.
+    
+    *Testing Method:*
+    ```python
+    orth_triangle(cath1=3, cath2=4)
+    ```
+    
+    *Test Results:*  
+    ![alt text](./asset/2023.05.14/image-7.png)
+
+### Tasks and Instructions for 2023.05.21 Files

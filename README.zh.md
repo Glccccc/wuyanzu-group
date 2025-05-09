@@ -58,7 +58,9 @@ wuyanzu-group/
 
 ### 2023.05.14/文件下的任务、功能及使用方法：  
 1. **编写 strong_password 函数**  
+    
     *功能：* 检查密码是否为强密码。  
+    
     *参数：*   
     - 参数1： 关键字必需参数，类型为 str，表示密码。  
    
@@ -66,15 +68,18 @@ wuyanzu-group/
     - 类型为 bool。当密码满足以下条件时返回 True，否则返回 False。
 
     *测试方法如下：*
-    ```bash
+    ```python
     strong_password('aA1!') == False  # 长度不够
     strong_password('aA1!aA1!') == True  # 符合所有条件 
     ```
-    *测试结果：*
-    ![alt text](./asset/image-2.png)  
+    
+    *测试结果：*  
+    ![alt text](./asset/2023.05.14/image-2.png)  
 
 2. **编写 taxi_cost 函数**  
-    *功能：* 计算出租车费用。  
+    
+    *功能：* 计算出租车费用。
+
     *参数：* 
      - 参数1：关键字必需参数，类型为 str，表示密码。
      - 参数2：关键字参数（可选），表示等待时间（分钟），默认为 0，类型为 int。  
@@ -84,64 +89,92 @@ wuyanzu-group/
     - 否则，根据规则计算并返回费用（整数）。
 
     *测试方法如下：*
-    ```bash
+    ```python
    taxi_cost(1500)
     ```
-    *测试结果：*
-    ![alt text](./asset/image-3.png)
+    
+    *测试结果：*  
+    ![alt text](./asset/2023.05.14/image-3.png)
 3. **编写 numbers_strip 函数**  
+    
     *功能：* 从列表中删除 n 个最小和最大数。  
+    
     *参数：*   
     - 参数1：一个必需的位置 - 关键字参数，列表（元素为 float）。
     - 参数2：一个可选的位置 - 关键字参数 n，默认为 1，类型为 int。
     - 参数3：一个严格的关键字参数，类型为 bool，默认 False，用于决定返回修改后的原列表还是新列表。  
    
-   *测试方法如下：*
-    ```bash
+    *返回值：* 按要求返回修改后的原列表或新列表。
+   
+    *测试方法如下：*
+    ```python
    nums =[10,20,30,40,50,60,70]
    nums_test= numbers_strip(nums, 3, copy=True)
    nums_test
     ```
-    *测试结果：*
-    ![alt text](./asset/image-4.png)
+    
+    *测试结果：*  
+    ![alt text](./asset/2023.05.14/image-4.png)
 4. **编写 countable_nouns 函数**  
+    
     *功能：* 根据数词选择合适的俄语名词形式。  
+    
     *参数：*   
     - 参数1：一个必需的 int 类型参数，表示数词。
     - 参数2：一个必需的 tuple 参数，包含三个 str，分别对应名词的三种形式。  
     
+    *返回值：* 根据数词规则返回对应的名词形式。
+    
     *测试方法如下：*  
-    ```
+    ```python
     countable_nouns(1, ("год", "года", "лет"))
     ```
-    *测试结果：*
-    ![alt text](./asset/image-5.png)
+    
+    *测试结果：*  
+    ![alt text](./asset/2023.05.14/image-5.png)
 5. **编写 central_tendency 函数**   
+    
     *功能：* 计算一系列数的中心趋势度量。  
+    
     *参数：* 
     - 参数1：位置参数1。
     - 参数2：位置参数2。
     - 参数3：任意数量的位置参数。  
     
+    *返回值：* 一个字典，包含以下键值对：
+    - 'median'：中位数（float）。
+    - 'arithmetic'：算术平均数（float）。
+    - 'geometric'：几何平均数（float）。
+    - 'harmonic'：调和平均数（float）。
+    
     *测试方法如下：*  
-    ```
+    ```python
     central_tendency(1, 2, 3, 4)
     ```   
-    *测试结果：* 
-    ![alt text](./asset/image-6.png)
+    
+    *测试结果：*   
+    ![alt text](./asset/2023.05.14/image-6.png)
+
 6. **编写 orth_triangle 函数**  
+    
     *功能：* 计算直角三角形的第三边。  
+    
     *参数：*   
     - 参数1：边长，类型为 int 或 float。
     - 参数2：边长，类型为 int 或 float。
     - 参数3：斜边，类型为 int 或 float。
    
+   *返回值：*
+    - 若计算可行，返回第三边长度（float）。
+    - 否则（如参数不合理），返回 None。
+    
     *测试方法如下：*  
-    ```
+    ```python
     orth_triangle(cath1=3, cath2=4)
     ```   
-    *测试结果：* 
-    ![alt text](./asset/image-7.png)
+    
+    *测试结果：*   
+    ![alt text](./asset/2023.05.14/image-7.png)
    
 ### 2023.05.21/文件下的任务、功能及使用方法：
 <!-- by 管立超 -->
