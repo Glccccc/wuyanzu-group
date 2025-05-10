@@ -1,10 +1,13 @@
-from utils_ref import important_message
+from utils_ref import important_message  # 从utils_ref模块导入important_message函数
 
 
 def main() -> None:
-    text = input('текст сообщения: ')
-    text = important_message(text)
-    print(f"\n{text}\n")
+    """
+    向用户请求输入一段消息，并通过important_message函数美化后输出到标准输出。
+    """
+    text = input('текст сообщения: ')  # 提示用户输入文本
+    text = important_message(text)      # 调用important_message格式化文本
+    print(f"\n{text}\n")              # 输出美化后的文本
 
 
 # >>> main()

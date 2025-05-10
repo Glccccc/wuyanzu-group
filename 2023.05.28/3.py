@@ -1,19 +1,19 @@
-from pathlib import Path
-from utils import load_file
+from pathlib import Path  # 导入Path类用于处理文件和目录路径
+from utils import load_file  # 从utils模块导入load_file函数
 
 
 def ask_for_file() -> '< module >':
-    
-    """Запрашивает у пользователя путь к потерянному файлу и копирует этот файл с помощью функции load_file. Возвращает объект модуля, созданного при импортировании файла."""
-    
+    """
+    向用户请求丢失文件的路径，验证文件存在后，调用load_file函数复制并导入该文件，返回模块对象。
+    """
     while True:
-        path_input = Path(input(' Введите путь к файлу: '))
-        if path_input.is_file():
+        path_input = Path(input(' Введите путь к файлу: '))  # 提示用户输入文件路径
+        if path_input.is_file():  # 判断路径是否为文件
             break
         else:
-            print('! Ошибка, не существует файл по указанному пути !')
+            print('! Ошибка, не существует файл по указанному пути !')  # 错误提示
         
-    return load_file(path_input)
+    return load_file(path_input)  # 调用load_file复制并导入文件，返回模块对象
 
 
 # D:\Лилия_мои_доки\Pythom_HW_git\Rafikova\2023.05.28>python -i 3.py
