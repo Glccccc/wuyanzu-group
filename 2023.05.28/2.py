@@ -1,9 +1,11 @@
-from utils import important_message
+from utils import important_message  # 从utils模块导入important_message函数
 
 def main() -> None:
-    """Запрашивает у пользователя сообщение и выводит его в stdout с помощью функции important_message из другого модуля."""
-    text = input(' Введите текст: ')
-    print(f'\n{important_message(text)}\n')
+    """
+    向用户请求输入一段消息，并通过important_message函数美化后输出到标准输出。
+    """
+    text = input(' Введите текст: ')  # 提示用户输入文本
+    print(f'\n{important_message(text)}\n')  # 调用important_message格式化输出
     
 
 # D:\Лилия_мои_доки\Pythom_HW_git\Rafikova\2023.05.28>python -i 2.py
