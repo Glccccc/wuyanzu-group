@@ -178,3 +178,114 @@ wuyanzu-group/
    
 ### 2023.05.21/文件下的任务、功能及使用方法：
 <!-- by 管立超 -->
+
+
+
+
+<!--2023.09.10文件  by 刘兴发 -->
+# 🇨🇳 中文版 README.md 示例
+---
+
+
+# Email Validator
+
+一个简单的命令行界面（CLI）应用程序，用于验证电子邮件地址的正确性，并将有效的电子邮件地址保存到文件中。
+
+## ✨ 项目特点
+
+- 📝 验证输入的电子邮件地址是否正确
+- ✅ 将有效的电子邮件地址保存到文件
+- 💾 数据保存在本地文本文件中
+- 🎨 简洁的命令行界面，易于使用
+
+## 🚀 快速开始
+
+### 克隆项目
+
+```bash
+git clone https://github.com/zaizai913/wuyanzu-group.git
+cd Email Validator 
+
+
+### 安装依赖
+
+```bash
+pip install -r requirements.txt
+```
+
+### 启动项目
+
+```bash
+python 1.py
+```
+
+项目将启动命令行界面，等待用户输入电子邮件地址。
+
+## 📦 项目结构
+
+```
+EmailValidator/
+├── model.py            # 数据处理和存储模型
+├── view.py             # 用户界面逻辑
+├── controller.py       # 业务逻辑协调
+├── 1.py                # 程序入口
+└── README.md
+```
+
+## 📮 项目主要功能说明与截图
+
+## 1.py
+这是程序的入口文件，负责启动应用程序。
+
+    功能：
+        导入 controller 模块。
+        在 main 函数中，创建 Application 类的实例并调用其 input_email 方法。
+        使用 if __name__ == '__main__': 确保直接运行此文件时才会执行 main 函数。
+
+## controller.py
+控制器模块，负责协调模型和视图之间的交互。
+
+    功能：
+        导入 model 和 view 模块。
+        Application 类：
+            save_email 方法：
+                创建 Email 类的实例，验证电子邮件地址是否有效。
+                如果有效，调用 FileIO.add_email 方法将地址保存到文件。
+                调用 CLI.save_email 方法向用户显示成功消息。
+                如果无效，捕获 ValueError 异常并调用 CLI.invalid_email 方法向用户显示错误消息。
+            input_email 方法：
+                使用 CLI.input_email 方法从用户获取电子邮件地址。
+                如果用户输入空字符串，退出循环。
+                否则，调用 save_email 方法处理输入的地址。
+
+## model.py
+模型模块，负责数据处理和存储。
+
+    功能：
+        Email 类：
+            使用正则表达式验证电子邮件地址是否符合标准格式。
+            如果地址有效，将其存储在私有属性 __email 中。
+            如果无效，抛出 ValueError 异常。
+        FileIO 类：
+            提供静态方法 add_email，将电子邮件地址追加到指定文件中。
+            默认保存路径为程序运行目录下的 emails.txt 文件。
+
+## view.py
+视图模块，负责与用户交互。
+
+    功能：
+        提供静态方法用于用户交互：
+            input_email：从标准输入获取电子邮件地址。
+            invalid_email：向用户显示地址无效的消息。
+            save_email：向用户显示地址成功保存的消息。
+
+
+1.输入电子邮件地址
+![alt text](2023.09.10/images/screenshot1.png)
+
+
+2.显示验证结果
+![alt text](2023.09.10/images/screenshot2.png)
+
+---
+<!--2023.09.10文件 by 刘兴发 -->

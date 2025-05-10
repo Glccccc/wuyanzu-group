@@ -186,3 +186,117 @@ wuyanzu-group/
     ![alt text](./asset/2023.05.14/image-7.png)
 
 ### Tasks and Instructions for 2023.05.21 Files
+
+
+
+
+
+<!--2023.09.10文件 by 刘兴发 -->
+# 英文版的Readme.md示例
+
+---
+
+# Email Validator
+
+A lightweight and easy-to-use command-line tool for validating email addresses and saving valid ones to a file.
+
+## ✨ Features
+
+- 📝 Verify if the entered email address is correct
+- ✅ Save a valid email address to a file
+- 💾 Data is saved in a local text file
+- 🎨 Simple command-line interface, easy to use
+
+## 🚀 Getting Started
+
+### Clone the repository
+
+```bash
+git clone https://github.com/zaizai913/wuyanzu-group.git
+cd Email Validator
+```
+
+### Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Run the app
+
+```bash
+python 1.py
+```
+
+The application will launch a command-line interface, prompting you to enter email addresses.
+
+## 📦 Project Structure
+
+```
+EmailValidator/
+├── model.py            # Data processing and storage model
+├── view.py             # User interface logic
+├── controller.py       # Business logic coordination
+├── 1.py                # Entry point
+└── README.md
+```
+
+## 📮 Primary function & Screenshot
+
+## 1.py
+This is the entry file of the program, responsible for launching the application.
+
+Functionality:
+    Import the controller module.
+    In the main function, create an instance of the Application class and call its input_email method.
+    Use if __name__ == '__main__': to ensure that the main function is executed only when this file is run directly.
+
+## controller.py
+The controller module, responsible for coordinating the interaction between the model and the view.
+
+Functionality:
+    Import the model and view modules.
+    Application class:
+        save_email method:
+            Create an instance of the Email class to validate whether the email address is valid.
+            If valid, call the FileIO.add_email method to save the address to a file.
+            Call the CLI.save_email method to display a success message to the user.
+            If invalid, catch the ValueError exception and call the CLI.invalid_email method to display an error message to the user.
+        input_email method:
+            Use the CLI.input_email method to get the email address from the user.
+            If the user inputs an empty string, exit the loop.
+            Otherwise, call the save_email method to process the input address.
+
+## model.py
+The model module, responsible for data processing and storage.
+
+Functionality:
+    Email class:
+        Use a regular expression to validate whether the email address conforms to the standard format.
+        If the address is valid, store it in the private attribute __email.
+        If invalid, raise a ValueError exception.
+    FileIO class:
+        Provide the static method add_email to append the email address to the specified file.
+        The default save path is the emails.txt file in the program's running directory.
+
+## view.py
+The view module, responsible for user interaction.
+
+Functionality:
+    Provide static methods for user interaction:
+        input_email: Get the email address from standard input.
+        invalid_email: Display an invalid address message to the user.
+        save_email: Display a successful save message to the user.
+
+
+1.Enter an email address
+
+[Image...]
+![alt text](2023.09.10/images/screenshot1.png)
+
+2.Display validation results
+
+[Image...]
+![alt text](2023.09.10/images/screenshot2.png)
+
+<!--2023.09.10文件 by 刘兴发 -->
