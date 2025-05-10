@@ -1,13 +1,13 @@
 """
 Модель MVC приложения.
 """
-
+from typing import Union
 from pathlib import Path
 from re import Pattern, compile, IGNORECASE
 from sys import path
 
 
-Pathlike = str | Path
+Pathlike = Union[str, Path]
 
 
 class Email:

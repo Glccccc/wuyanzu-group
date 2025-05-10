@@ -693,3 +693,251 @@ wuyanzu-group/
         如果两个格子的列坐标差值和行坐标差值都在 -1 到 1 之间，则说明它们相邻（包括水平、垂直或对角方向）。
         如果满足上述条件，则输出“Да”；否则输出“Нет”。
 <!-- by 黄家翔 -->
+
+
+
+<!--2023.09.10文件  by 刘兴发 -->
+# Email Validator
+
+一个简单的命令行界面（CLI）应用程序，用于验证电子邮件地址的正确性，并将有效的电子邮件地址保存到文件中。
+
+## ✨ 项目特点
+
+- 📝 验证输入的电子邮件地址是否正确
+- ✅ 将有效的电子邮件地址保存到文件
+- 💾 数据保存在本地文本文件中
+- 🎨 简洁的命令行界面，易于使用
+
+## 🚀 快速开始
+
+### 克隆项目
+
+```bash
+git clone https://github.com/zaizai913/wuyanzu-group.git
+cd Email Validator 
+
+
+### 安装依赖
+
+```bash
+pip install -r requirements.txt
+```
+
+### 启动项目
+
+```bash
+python 1.py
+```
+
+项目将启动命令行界面，等待用户输入电子邮件地址。
+
+## 📦 项目结构
+
+```
+EmailValidator/
+├── model.py            # 数据处理和存储模型
+├── view.py             # 用户界面逻辑
+├── controller.py       # 业务逻辑协调
+├── 1.py                # 程序入口
+└── README.md
+```
+
+## 📮 项目主要功能说明与截图
+
+## 1.py
+这是程序的入口文件，负责启动应用程序。
+
+    功能：
+        导入 controller 模块。
+        在 main 函数中，创建 Application 类的实例并调用其 input_email 方法。
+        使用 if __name__ == '__main__': 确保直接运行此文件时才会执行 main 函数。
+
+## controller.py
+控制器模块，负责协调模型和视图之间的交互。
+
+    功能：
+        导入 model 和 view 模块。
+        Application 类：
+            save_email 方法：
+                创建 Email 类的实例，验证电子邮件地址是否有效。
+                如果有效，调用 FileIO.add_email 方法将地址保存到文件。
+                调用 CLI.save_email 方法向用户显示成功消息。
+                如果无效，捕获 ValueError 异常并调用 CLI.invalid_email 方法向用户显示错误消息。
+            input_email 方法：
+                使用 CLI.input_email 方法从用户获取电子邮件地址。
+                如果用户输入空字符串，退出循环。
+                否则，调用 save_email 方法处理输入的地址。
+
+## model.py
+模型模块，负责数据处理和存储。
+
+    功能：
+        Email 类：
+            使用正则表达式验证电子邮件地址是否符合标准格式。
+            如果地址有效，将其存储在私有属性 __email 中。
+            如果无效，抛出 ValueError 异常。
+        FileIO 类：
+            提供静态方法 add_email，将电子邮件地址追加到指定文件中。
+            默认保存路径为程序运行目录下的 emails.txt 文件。
+
+## view.py
+视图模块，负责与用户交互。
+
+    功能：
+        提供静态方法用于用户交互：
+            input_email：从标准输入获取电子邮件地址。
+            invalid_email：向用户显示地址无效的消息。
+            save_email：向用户显示地址成功保存的消息。
+
+
+1.输入电子邮件地址
+![alt text](2023.09.10/images/screenshot1.png)
+
+
+2.显示验证结果
+![alt text](2023.09.10/images/screenshot2.png)
+
+---
+<!--2023.09.10文件 by 刘兴发 -->
+
+
+<!--2023.10.15文件 by 刘兴发 -->
+<!--2023.10.15文件 #HW2023.10.15.1 by 刘兴发 -->
+# 数据库安装与配置指南
+## 安装软件
+对于 Windows 操作系统，下载 MySQL Installer 安装包：
+[MySQL :: Download MySQL Installer](https://dev.mysql.com/downloads/installer/) 
+
+运行 MySQL Installer 安装包。
+按照发送的视频教程中的建议执行安装和配置组件。
+
+对于其他操作系统，下载单独的组件：
+[MySQL :: MySQL Community Downloads](https://dev.mysql.com/downloads/) 
+
+- MySQL Community Server
+- MySQL Shell
+- MySQL Workbench
+
+根据您的操作系统要求安装组件。安装说明：
+[MySQL :: MySQL 8.0 Reference Manual :: 2 Installing MySQL](https://dev.mysql.com/doc/refman/8.0/en/installing.html) 
+
+配置选项也在视频教程中进行了说明。
+
+为了测试功能，在 MySQL Shell 客户端应用程序中依次执行以下命令（如果更改了端口号，请替换为您自己的端口号）：
+```sql
+
+\connect root@localhost:3306
+\sql
+show databases;
+
+```
+
+执行屏幕截图：
+    任务管理器窗口，突出显示本地 MySQL 服务器服务
+    执行了命令的 MySQL Shell 窗口（应显示所有命令的输出）
+    已登录到本地服务器连接的 MySQL Workbench 窗口（应显示导航面板、编辑器窗口等）
+========================
+将屏幕截图放置在当前仓库目录中，以 JPG 或 PNG 文件的形式，文件名分别为 1.1、1.2 和 1.3。
+<!--2023.10.15文件 #HW2023.10.15.1 by 刘兴发 -->
+
+
+<!--2023.10.15文件 #HW2023.10.15.2 by 刘兴发 -->
+# 音乐收藏库管理系统
+
+一个用于管理音乐收藏的数据库系统，支持艺术家、音乐合集、歌曲、风格和发行商的信息管理。
+
+## ✨ 项目特点
+
+- 🎵 管理艺术家信息
+- 📀 管理音乐合集信息
+- 🎶 管理歌曲信息
+- 🎭 管理音乐风格
+- 🌐 管理发行商信息
+- 📐 数据库设计与建模
+
+## 🚀 快速开始
+
+### 1. 安装 MySQL
+
+- **Windows**：下载并安装 MySQL Installer：
+  [MySQL :: Download MySQL Installer](https://dev.mysql.com/downloads/installer/)
+- **其他操作系统**：下载并安装 MySQL 社区版：
+  [MySQL :: MySQL Community Downloads](https://dev.mysql.com/downloads/)
+
+### 2. 创建数据库和表
+
+运行以下 SQL 脚本创建数据库和表：
+
+```sql
+-- 创建数据库
+CREATE DATABASE mus_library;
+
+-- 使用数据库
+USE mus_library;
+
+-- 创建表
+create table styles (
+    id tinyint unsigned primary key auto_increment,
+    style varchar(50) not null unique
+);
+
+create table performers (
+    id smallint unsigned primary key auto_increment,
+    performer varchar(100) not null unique
+);
+
+create table publishers (
+    id smallint unsigned primary key auto_increment,
+    publisher varchar(100) not null unique,
+    country varchar(50) not null
+);
+
+create table collections (
+    id smallint unsigned primary key auto_increment,
+    collection varchar(100) not null unique,
+    performer_id smallint unsigned not null,
+    `date` year,
+    style_id tinyint unsigned not null,
+    publisher_id smallint unsigned not null,
+    foreign key (performer_id) references performers (id),
+    foreign key (style_id) references styles (id)  ,
+    foreign key (publisher_id) references publishers (id)
+);
+
+create table songs (
+    id int unsigned primary key auto_increment,
+    song varchar(100) not null,
+    performer_id smallint unsigned not null,
+    collection_id smallint unsigned not null,
+    style_id tinyint unsigned not null,
+    duration time not null,
+    foreign key (performer_id) references performers (id),
+    foreign key (collection_id) references collections (id),
+    foreign key (style_id) references styles (id)
+);
+
+```
+
+3. 数据库建模
+使用数据库建模工具（如 MySQL Workbench 或 dbdiagram.io）构建数据库图表，并保存为 JPG 或 PNG 格式的图像文件，文件名为 2.1。
+
+4. 保存 SQL 脚本
+将上述 SQL 脚本保存到名为 2.2.sql 的文件中。
+
+## 📦 项目结构
+
+mus_library/
+├── 2.1.png          # 数据库图表
+├── 2.2.sql          # SQL 脚本
+└── README.md
+
+## 📮 项目主要功能说明与截图
+1. 数据库图表
+![alt text](2023.10.15/2.1.png)
+
+2. SQL 脚本
+保存为 2.2.sql 文件。
+## 📝 项目说明
+数据库图表：使用 dbdiagram.io 或 MySQL Workbench 创建。
+SQL 脚本：包含创建数据库和表的 DDL 查询。
+<!--2023.10.15文件 #HW2023.10.15.2 by 刘兴发 -->
