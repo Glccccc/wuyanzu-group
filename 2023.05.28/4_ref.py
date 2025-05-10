@@ -1,26 +1,33 @@
-import utils
+import utils  # 导入自定义工具模块
 
 
 def search_context(keyword, *keywords, context=0) -> list[dict]:
-    keywords = keyword, *keywords
+    """
+    在utils.DATA_DIR目录下所有txt文件中查找包含指定关键字的行，并可选返回上下文行。
+    :param keyword: 主关键字
+    :param keywords: 其他关键字
+    :param context: 上下文行数，默认为0
+    :return: 包含匹配信息的字典列表
+    """
+    keywords = keyword, *keywords  # 组合所有关键字
     result = []
     for textfile_path in utils.DATA_DIR.glob('*.txt'):
         with open(textfile_path, encoding='utf-8') as filein:
-            lines = tuple(filein)
+            lines = tuple(filein)  # 读取所有行
         for i, line in enumerate(lines):
             for keyword in keywords:
-                if keyword.lower() in line.lower():
+                if keyword.lower() in line.lower():  # 判断关键字是否在行中
                     left = i - context
                     left = left if left > 0 else 0
                     right = i + 1 + context
                     result.append({
-                        'keyword': keyword,
-                        'filename': textfile_path.name,
-                        'line': i + 1,
-                        'context': context,
-                        'text': ''.join(line for line in lines[left:right]).strip('\n')
+                        'keyword': keyword,  # 匹配到的关键字
+                        'filename': textfile_path.name,  # 文件名
+                        'line': i + 1,  # 行号
+                        'context': context,  # 上下文行数
+                        'text': ''.join(line for line in lines[left:right]).strip('\n')  # 匹配文本
                     })
-    return result
+    return result  # 返回所有匹配结果
 
 
 # >>> from pprint import pprint
