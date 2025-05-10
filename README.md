@@ -300,3 +300,144 @@ Functionality:
 ![alt text](2023.09.10/images/screenshot2.png)
 
 <!--2023.09.10文件 by 刘兴发 -->
+
+
+
+<!--2023.10.15文件 by 刘兴发 -->
+<!--2023.10.15文件 #HW2023.10.15.1 by 刘兴发 -->
+# Database Installation and Configuration Guide
+## Software Installation
+For Windows OS, download the MySQL Installer package:
+[MySQL :: Download MySQL Installer](https://dev.mysql.com/downloads/installer/) 
+
+Run the MySQL Installer package.
+Perform installation and configuration of components according to the recommendations in the provided video tutorial.
+
+For other operating systems, download the individual components:
+[MySQL :: MySQL Community Downloads](https://dev.mysql.com/downloads/) 
+
+- MySQL Community Server
+- MySQL Shell
+- MySQL Workbench
+
+Install the components according to the requirements of your operating system. Installation instructions:
+[MySQL :: MySQL 8.0 Reference Manual :: 2 Installing MySQL](https://dev.mysql.com/doc/refman/8.0/en/installing.html) 
+
+Configuration options are also described in the video tutorial.
+
+To test functionality, execute the following commands sequentially in the MySQL Shell client application (replace with your own port number if changed):
+```sql
+
+\connect root@localhost:3306
+\sql
+show databases;
+
+```
+
+Take screenshots:
+    Task Manager window with the local MySQL server service highlighted
+    MySQL Shell window with executed commands (output of all commands should be visible)
+    MySQL Workbench window logged into the local server connection (navigation panel, editor window, etc., should be visible)
+========================
+Place the screenshots in the current repository directory as JPG or PNG files named 1.1, 1.2, and 1.3, respectively.
+
+<!--2023.10.15文件 #HW2023.10.15.2 by 刘兴发 -->
+# Music Collection Management System
+
+A database system for managing a music collection, supporting information management for artists, music albums, songs, genres, and publishers.
+
+## ✨ Features
+
+- 🎵 Manage artist information
+- 📀 Manage music album information
+- 🎶 Manage song information
+- 🎭 Manage music genres
+- 🌐 Manage publishers
+- 📐 Database design and modeling
+
+## 🚀 Getting Started
+
+### 1. Install MySQL
+
+- **Windows**: Download and install MySQL Installer:
+  [MySQL :: Download MySQL Installer](https://dev.mysql.com/downloads/installer/)
+- **Other Operating Systems**: Download and install MySQL Community Edition:
+  [MySQL :: MySQL Community Downloads](https://dev.mysql.com/downloads/)
+
+### 2. Create Database and Tables
+
+Run the following SQL script to create the database and tables:
+
+```sql
+-- Create database
+CREATE DATABASE mus_library;
+
+-- Use database
+USE mus_library;
+
+-- Create tables
+create table styles (
+    id tinyint unsigned primary key auto_increment,
+    style varchar(50) not null unique
+);
+
+create table performers (
+    id smallint unsigned primary key auto_increment,
+    performer varchar(100) not null unique
+);
+
+create table publishers (
+    id smallint unsigned primary key auto_increment,
+    publisher varchar(100) not null unique,
+    country varchar(50) not null
+);
+
+create table collections (
+    id smallint unsigned primary key auto_increment,
+    collection varchar(100) not null unique,
+    performer_id smallint unsigned not null,
+    `date` year,
+    style_id tinyint unsigned not null,
+    publisher_id smallint unsigned not null,
+    foreign key (performer_id) references performers (id),
+    foreign key (style_id) references styles (id)  ,
+	foreign key (publisher_id) references publishers (id)
+);
+
+create table songs (
+	id int unsigned primary key auto_increment,
+	song varchar(100) not null,
+	performer_id smallint unsigned not null,
+	collection_id smallint unsigned not null,
+    style_id tinyint unsigned not null,
+	duration time not null,
+    foreign key (performer_id) references performers (id),
+	foreign key (collection_id) references collections (id),
+	foreign key (style_id) references styles (id)
+);
+
+```
+
+3. Database Modeling
+Use a database modeling tool (such as MySQL Workbench or dbdiagram.io) to create a database diagram and save it as a JPG or PNG image file named 2.1.
+
+4. Save SQL Script
+Save the above SQL script to a file named 2.2.sql.
+
+## 📦 Project Structure
+
+        mus_library/
+        ├── 2.1.png          # Database diagram
+        ├── 2.2.sql          # SQL script
+        └── README.md
+
+## 📮 Primary Function and Screenshot
+1. Database Diagram
+![alt text](2023.10.15/2.1.png)
+2. SQL Script
+Saved as 2.2.sql file.
+
+## 📝 Project Description
+Database Diagram: Created using dbdiagram.io or MySQL Workbench.
+SQL Script: Contains DDL queries to create the database and tables.
+<!--2023.10.15文件 #HW2023.10.15.2 by 刘兴发 -->

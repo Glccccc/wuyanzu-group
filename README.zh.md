@@ -289,3 +289,145 @@ EmailValidator/
 
 ---
 <!--2023.09.10文件 by 刘兴发 -->
+
+
+<!--2023.10.15文件 by 刘兴发 -->
+<!--2023.10.15文件 #HW2023.10.15.1 by 刘兴发 -->
+# 数据库安装与配置指南
+## 安装软件
+对于 Windows 操作系统，下载 MySQL Installer 安装包：
+[MySQL :: Download MySQL Installer](https://dev.mysql.com/downloads/installer/) 
+
+运行 MySQL Installer 安装包。
+按照发送的视频教程中的建议执行安装和配置组件。
+
+对于其他操作系统，下载单独的组件：
+[MySQL :: MySQL Community Downloads](https://dev.mysql.com/downloads/) 
+
+- MySQL Community Server
+- MySQL Shell
+- MySQL Workbench
+
+根据您的操作系统要求安装组件。安装说明：
+[MySQL :: MySQL 8.0 Reference Manual :: 2 Installing MySQL](https://dev.mysql.com/doc/refman/8.0/en/installing.html) 
+
+配置选项也在视频教程中进行了说明。
+
+为了测试功能，在 MySQL Shell 客户端应用程序中依次执行以下命令（如果更改了端口号，请替换为您自己的端口号）：
+```sql
+
+\connect root@localhost:3306
+\sql
+show databases;
+
+```
+
+执行屏幕截图：
+    任务管理器窗口，突出显示本地 MySQL 服务器服务
+    执行了命令的 MySQL Shell 窗口（应显示所有命令的输出）
+    已登录到本地服务器连接的 MySQL Workbench 窗口（应显示导航面板、编辑器窗口等）
+========================
+将屏幕截图放置在当前仓库目录中，以 JPG 或 PNG 文件的形式，文件名分别为 1.1、1.2 和 1.3。
+<!--2023.10.15文件 #HW2023.10.15.1 by 刘兴发 -->
+
+
+<!--2023.10.15文件 #HW2023.10.15.2 by 刘兴发 -->
+# 音乐收藏库管理系统
+
+一个用于管理音乐收藏的数据库系统，支持艺术家、音乐合集、歌曲、风格和发行商的信息管理。
+
+## ✨ 项目特点
+
+- 🎵 管理艺术家信息
+- 📀 管理音乐合集信息
+- 🎶 管理歌曲信息
+- 🎭 管理音乐风格
+- 🌐 管理发行商信息
+- 📐 数据库设计与建模
+
+## 🚀 快速开始
+
+### 1. 安装 MySQL
+
+- **Windows**：下载并安装 MySQL Installer：
+  [MySQL :: Download MySQL Installer](https://dev.mysql.com/downloads/installer/)
+- **其他操作系统**：下载并安装 MySQL 社区版：
+  [MySQL :: MySQL Community Downloads](https://dev.mysql.com/downloads/)
+
+### 2. 创建数据库和表
+
+运行以下 SQL 脚本创建数据库和表：
+
+```sql
+-- 创建数据库
+CREATE DATABASE mus_library;
+
+-- 使用数据库
+USE mus_library;
+
+-- 创建表
+create table styles (
+    id tinyint unsigned primary key auto_increment,
+    style varchar(50) not null unique
+);
+
+create table performers (
+    id smallint unsigned primary key auto_increment,
+    performer varchar(100) not null unique
+);
+
+create table publishers (
+    id smallint unsigned primary key auto_increment,
+    publisher varchar(100) not null unique,
+    country varchar(50) not null
+);
+
+create table collections (
+    id smallint unsigned primary key auto_increment,
+    collection varchar(100) not null unique,
+    performer_id smallint unsigned not null,
+    `date` year,
+    style_id tinyint unsigned not null,
+    publisher_id smallint unsigned not null,
+    foreign key (performer_id) references performers (id),
+    foreign key (style_id) references styles (id)  ,
+	foreign key (publisher_id) references publishers (id)
+);
+
+create table songs (
+	id int unsigned primary key auto_increment,
+	song varchar(100) not null,
+	performer_id smallint unsigned not null,
+	collection_id smallint unsigned not null,
+    style_id tinyint unsigned not null,
+	duration time not null,
+    foreign key (performer_id) references performers (id),
+	foreign key (collection_id) references collections (id),
+	foreign key (style_id) references styles (id)
+);
+
+```
+
+3. 数据库建模
+使用数据库建模工具（如 MySQL Workbench 或 dbdiagram.io）构建数据库图表，并保存为 JPG 或 PNG 格式的图像文件，文件名为 2.1。
+
+4. 保存 SQL 脚本
+将上述 SQL 脚本保存到名为 2.2.sql 的文件中。
+
+## 📦 项目结构
+
+mus_library/
+├── 2.1.png          # 数据库图表
+├── 2.2.sql          # SQL 脚本
+└── README.md
+
+## 📮 项目主要功能说明与截图
+1. 数据库图表
+![alt text](2023.10.15/2.1.png)
+
+2. SQL 脚本
+保存为 2.2.sql 文件。
+## 📝 项目说明
+数据库图表：使用 dbdiagram.io 或 MySQL Workbench 创建。
+SQL 脚本：包含创建数据库和表的 DDL 查询。
+<!--2023.10.15文件 #HW2023.10.15.2 by 刘兴发 -->
