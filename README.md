@@ -53,7 +53,7 @@ wuyanzu-group/
 ### Tasks and Instructions for 2023.05.14 Files
 
 1. **Implement the strong_password Function**
-    
+   
     *Function:* Checks if a password is strong.
     
     *Parameters:*
@@ -76,7 +76,7 @@ wuyanzu-group/
     ![alt text](./asset/2023.05.14/image-2.png)
 
 2. **Implement the taxi_cost Function**
-    
+   
     *Function:* Calculates the taxi fare.
     
     *Parameters:*
@@ -101,7 +101,7 @@ wuyanzu-group/
     ![alt text](./asset/2023.05.14/image-3.png)
 
 3. **Implement the numbers_strip Function**
-    
+   
     *Function:* Removes the n smallest and largest numbers from a list.
     
     *Parameters:*
@@ -123,7 +123,7 @@ wuyanzu-group/
     ![alt text](./asset/2023.05.14/image-4.png)
 
 4. **Implement the countable_nouns Function**
-    
+   
     *Function:* Selects the appropriate Russian noun form based on the numeral.
     
     *Parameters:*
@@ -141,7 +141,7 @@ wuyanzu-group/
     ![alt text](./asset/2023.05.14/image-5.png)
 
 5. **Implement the central_tendency Function**
-    
+   
     *Function:* Calculates the measures of central tendency for a set of numbers.
     
     *Parameters:*
@@ -165,7 +165,7 @@ wuyanzu-group/
     ![alt text](./asset/2023.05.14/image-6.png)
 
 6. **Implement the orth_triangle Function**
-    
+   
     *Function:* Calculates the third side of a right-angled triangle.
     
     *Parameters:*
@@ -535,42 +535,31 @@ wuyanzu-group/
 
 
 <!--2023.09.10文件    by 刘兴发 -->
-# Email Validator
+### Tasks, functions, and usage methods under document 2023.09.10:
+#### Email Validator
 
 A lightweight and easy-to-use command-line tool for validating email addresses and saving valid ones to a file.
 
-## ✨ Features
+#####  Features
+-  Verify if the entered email address is correct
+-  Save a valid email address to a file
+-  Data is saved in a local text file
+-  Simple command-line interface, easy to use
 
-- 📝 Verify if the entered email address is correct
-- ✅ Save a valid email address to a file
-- 💾 Data is saved in a local text file
-- 🎨 Simple command-line interface, easy to use
 
-## 🚀 Getting Started
-
-### Clone the repository
-
-```bash
-git clone https://github.com/zaizai913/wuyanzu-group.git
-cd Email Validator
-```
-
-### Install dependencies
-
+#####  Getting Started
+###### Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### Run the app
-
+###### Run the app
 ```bash
 python 1.py
 ```
-
 The application will launch a command-line interface, prompting you to enter email addresses.
 
-## 📦 Project Structure
-
+######  Project Structure
 ```
 EmailValidator/
 ├── model.py            # Data processing and storage model
@@ -580,9 +569,8 @@ EmailValidator/
 └── README.md
 ```
 
-## 📮 Primary function & Screenshot
-
-## 1.py
+####  Primary function & Screenshot
+##### 1.py
 This is the entry file of the program, responsible for launching the application.
 
 Functionality:
@@ -590,7 +578,9 @@ Functionality:
     In the main function, create an instance of the Application class and call its input_email method.
     Use if __name__ == '__main__': to ensure that the main function is executed only when this file is run directly.
 
-## controller.py
+![alt text](2023.09.10/images/screenshot3.png)
+
+###### controller.py
 The controller module, responsible for coordinating the interaction between the model and the view.
 
 Functionality:
@@ -606,7 +596,9 @@ Functionality:
             If the user inputs an empty string, exit the loop.
             Otherwise, call the save_email method to process the input address.
 
-## model.py
+![alt text](2023.09.10/images/screenshot4.png)
+
+###### model.py
 The model module, responsible for data processing and storage.
 
 Functionality:
@@ -618,7 +610,9 @@ Functionality:
         Provide the static method add_email to append the email address to the specified file.
         The default save path is the emails.txt file in the program's running directory.
 
-## view.py
+![alt text](2023.09.10/images/screenshot5.png)
+
+###### view.py
 The view module, responsible for user interaction.
 
 Functionality:
@@ -627,24 +621,25 @@ Functionality:
         invalid_email: Display an invalid address message to the user.
         save_email: Display a successful save message to the user.
 
+![alt text](2023.09.10/images/screenshot6.png)
+---
 
 1.Enter an email address
-
-[Image...]
 ![alt text](2023.09.10/images/screenshot1.png)
 
 2.Display validation results
-
-[Image...]
 ![alt text](2023.09.10/images/screenshot2.png)
 
+---
 <!--2023.09.10文件 by 刘兴发 -->
 
 
 <!--2023.10.15文件 by 刘兴发 -->
 <!--2023.10.15文件 #HW2023.10.15.1 by 刘兴发 -->
-# Database Installation and Configuration Guide
-## Software Installation
+### Tasks, functions, and usage methods under document 2023.10.15:
+
+#### Database installation and configuration
+##### Software Installation
 For Windows OS, download the MySQL Installer package:
 [MySQL :: Download MySQL Installer](https://dev.mysql.com/downloads/installer/) 
 
@@ -669,41 +664,34 @@ To test functionality, execute the following commands sequentially in the MySQL 
 \connect root@localhost:3306
 \sql
 show databases;
-
 ```
+![alt text](2023.10.15/1.2.png)
+<!--2023.10.15文件 #HW2023.10.15.1 by 刘兴发 -->
 
-Take screenshots:
-    Task Manager window with the local MySQL server service highlighted
-    MySQL Shell window with executed commands (output of all commands should be visible)
-    MySQL Workbench window logged into the local server connection (navigation panel, editor window, etc., should be visible)
-========================
-Place the screenshots in the current repository directory as JPG or PNG files named 1.1, 1.2, and 1.3, respectively.
 
 <!--2023.10.15文件 #HW2023.10.15.2 by 刘兴发 -->
-# Music Collection Management System
+### Tasks, functions, and usage methods under document 2023.10.15:
+### Music Collection Management System
 
 A database system for managing a music collection, supporting information management for artists, music albums, songs, genres, and publishers.
 
-## ✨ Features
+#### Features
+-  Manage artist information
+-  Manage music album information
+-  Manage song information
+-  Manage music genres
+-  Manage publishers
+-  Database design and modeling
 
-- 🎵 Manage artist information
-- 📀 Manage music album information
-- 🎶 Manage song information
-- 🎭 Manage music genres
-- 🌐 Manage publishers
-- 📐 Database design and modeling
+####  Getting Started
 
-## 🚀 Getting Started
-
-### 1. Install MySQL
-
+##### 1. Install MySQL
 - **Windows**: Download and install MySQL Installer:
   [MySQL :: Download MySQL Installer](https://dev.mysql.com/downloads/installer/)
 - **Other Operating Systems**: Download and install MySQL Community Edition:
   [MySQL :: MySQL Community Downloads](https://dev.mysql.com/downloads/)
 
-### 2. Create Database and Tables
-
+##### 2. Create Database and Tables
 Run the following SQL script to create the database and tables:
 
 ```sql
@@ -762,20 +750,19 @@ Use a database modeling tool (such as MySQL Workbench or dbdiagram.io) to create
 4. Save SQL Script
 Save the above SQL script to a file named 2.2.sql.
 
-## 📦 Project Structure
-
+####  Project Structure
         mus_library/
         ├── 2.1.png          # Database diagram
         ├── 2.2.sql          # SQL script
         └── README.md
 
-## 📮 Primary Function and Screenshot
+#### Primary Function and Screenshot
 1. Database Diagram
 ![alt text](2023.10.15/2.1.png)
 2. SQL Script
 Saved as 2.2.sql file.
 
-## 📝 Project Description
+#### DESCRIPTION
 Database Diagram: Created using dbdiagram.io or MySQL Workbench.
 SQL Script: Contains DDL queries to create the database and tables.
 <!--2023.10.15文件 #HW2023.10.15.2 by 刘兴发 -->
@@ -810,7 +797,7 @@ SQL Script: Contains DDL queries to create the database and tables.
    file1 = File(name="example.txt", dir="C:/Documents")
    print(file1.extension())  # Output: txt
    print(file1.ls())         # Output: C:/Documents/example.txt
-
+   
    folder = Folder([file1])
    folder.add_elements(File(name="example2.txt", dir="C:/Documents"))
    for obj in folder:
@@ -974,7 +961,7 @@ SQL Script: Contains DDL queries to create the database and tables.
    file1 = File(name="example.txt", dir="C:/Documents")
    print(file1.extension())  # Output: txt
    print(file1.ls())         # Output: C:/Documents/example.txt
-
+   
    folder = Folder([file1])
    folder.add_elements(File(name="example2.txt", dir="C:/Documents"))
    for obj in folder:
@@ -983,7 +970,140 @@ SQL Script: Contains DDL queries to create the database and tables.
 
    *Test result:*
    ![alt text](./asset/2023.08.27/image5.png)
-<!-- by 裴河权 -->
+
+### 2023.09.03/files tasks, functions, and usage methods:
+1. **International Chess Game Manager**
+    *Function:*   
+    - Implements an international chess game management module, mainly responsible for move recording and game state management.
+
+    *Core Class Descriptions:*   
+    - Turn Class:
+      Function: Stores all key information of a single move
+      Parameters:
+      piece: the moving piece object
+      start_square: starting position coordinate
+      end_square: target position coordinate
+      turn_count: turn counter
+    - Game Class:
+      Function: Manages the entire game lifecycle
+      Main methods:
+      move(start_square, end_square):
+      Parameters: two coordinate strings (e.g., "a2", "a4")
+      Executes: moves a piece and records the move
+      history_turns():
+      Prints all historical moves
+      rollback_game(turn_count):
+      Parameters: target turn number
+      Function: Roll back the game to the specified turn state
+
+    *Return Values:*
+    - File Class:
+      extension(): Returns the file extension (string type).
+      ls(): Returns the file path (string type).
+    - Folder Class:
+      ls(): Lists the contents of the folder (list type).
+
+    *Test Method as follows:*  
+    ```python
+    game = Game()
+    game.move('a1','a3')
+    game.move('b1','b3')
+    game.move('c1','c3')
+    ```
+    *Test Result:*  
+    ![alt text](./asset/2023.09.03/image1.png)
+
+2. **Chessboard Class Structure Analysis (chess.png content)**
+
+    1. Chessboard (Main class)
+      Core functions:
+      __init__(): Initialize an empty board
+      __post_init__(): Set up the initial piece layout
+      __rank(): Get all squares in a specified rank
+      __getitem__(): Support multiple coordinate access methods
+      Key features:
+      Manages board columns through nested File classes
+      Supports board["a1"] and board["a"][1] access methods
+      Automatically initializes the standard opening layout
+
+    2. File (Board column)
+      Constructor:
+      __init__(file: str, start_color: SquareColor)
+      Parameters:
+      file: column letter (a-h)
+      start_color: starting square color of the column
+
+    3. Square (Board square)
+      Properties:
+      color: SquareColor (LIGHT/DARK)
+      file: column label (a-h)
+      rank: row label (1-8)
+      piece: current piece on the square (optional)
+      Methods:
+      __repr__(): developer debugging representation
+      __str__(): returns coordinate string (e.g., "a1")
+
+    4. Piece (Chess piece)
+      Key properties:
+      color: piece color (WHITE/BLACK)
+      kind: piece type (6 types)
+      square: current position square
+      removed: whether it has been captured
+      Core methods:
+      move(end_square): execute movement and capture logic
+      __del__(): automatically handles piece removal
+      String representation:
+      __str__(): short form (e.g., "WP" for White Pawn)
+      __repr__(): full name (e.g., "White Pawn")
+
+    5. Enumeration types:
+      SquareColor:
+      LIGHT: Light-colored square
+      DARK: Dark-colored square
+      PieceColor:
+      WHITE: White side
+      BLACK: Black side
+      PieceKind:
+      6 standard chess pieces: King, Queen, Rook, Bishop, Knight, Pawn
+
+3. **Core Chess Engine**
+    *Function:*   
+    - Implements core data structures and basic rules of chess.
+
+    *Core Components:*   
+    - Enum types:
+      SquareColor: board square color (LIGHT/DARK)
+      PieceColor: piece color (WHITE/BLACK)
+      PieceKind: piece type (6 types)
+    - Piece Class:
+      Function: represents a single chess piece
+      Main methods:
+      move(end_square): executes move and capture logic
+      Automatically handles captured pieces removal
+    - Square Class:
+      Function: represents a single board square
+      Properties: color, coordinate, current piece
+    - Chessboard Class:
+      Function: complete board representation
+      Features:
+      Supports multiple coordinate access methods ("a1" or separate row/column)
+      Automatically initializes standard opening layout
+      Nested File classes manage board columns
+
+4. **Font Files**
+    DejaVuSans.ttf
+    FreeSerif.ttf
+    Quivira.ttf
+    Type: TrueType fonts
+    Uses:
+      Displaying board coordinate labels
+      Text rendering in game interface
+      Possibly for displaying special chess symbols (e.g., piece icons)
+    Features:
+      DejaVuSans: Sans-serif font, suitable for interface display
+      FreeSerif: Serif font, suitable for formal text
+      Quivira: Contains many Unicode symbols, possibly for showing chess piece graphics
+   <!-- by 裴河权 -->
 
 ## 📮 Project Main Function Description and Screenshots
 <!-- by 钟章鸿 -->
@@ -1035,13 +1155,13 @@ SQL Script: Contains DDL queries to create the database and tables.
 
         __repr__():
             Function: Returns the string representation of the King piece, used for debugging.
-
+    
         __str__():
             Function: Returns the string representation of the King piece, used for printing.
-
+    
         is_turn_valid(new_square):
             Function: Checks whether a move from the current square to the new square is valid for a King. Returns True if the move is legal, False otherwise.
-
+    
         turn(new_square):
             Function: Performs the move from the current square to the target square.
 
@@ -1057,7 +1177,7 @@ SQL Script: Contains DDL queries to create the database and tables.
 
         pick(number, word):
             Function: Based on the input number and base form of the noun, returns the correct noun form.
-
+        
         save_words(word1):
             Function: Through interactive input, adds new noun forms to the internal words dictionary and words.csv file. If word1 is not provided, prompts the user for input.
 
@@ -1070,55 +1190,55 @@ SQL Script: Contains DDL queries to create the database and tables.
     Point Class
 
         Functionality:
-
+    
             Stores coordinates of a point (x and y).
-
+    
             Provides read-only attributes.
-
+    
             Supports comparison and string representation.
-
+    
         Parameters:
-
+    
             x: float, y: float
-
+    
         Methods:
-
+    
             __eq__(): Compares two points (equal if both x and y are equal).
-
+    
             __str__() and __repr__(): Returns the string representation of the point.
 
     Line Class
 
         Functionality:
              a line segment defined by two points (start and end), supports length calculation and dynamic updating of endpoints.
-
+    
         Parameters:
-
+    
             start: Point
-
+    
             end: Point
-
+    
         Methods:
-
+    
             length_calc(): Calculates the distance between the two points (i.e., the length of the line segment).
-
+    
             start(), end(): Endpoints can be dynamically updated but must be assigned as Point objects; otherwise, a TypeError is raised.
-
+    
             __str__() and __repr__(): Returns the string representation of the line.
 
     Polygon Class
 
         Functionality:
             Represents a polygon composed of multiple line segments. Supports checking whether the polygon is closed and calculating its perimeter.
-
+    
         Methods:
-
+    
             is_closed():
                 Function: 
                     Checks whether the polygon is closed:
                     Whether the first and last segments are connected.
                     Whether each segment’s endpoint connects to the next segment’s start point.
-
+    
             perimeter():
                 Function: 
                     Calculates the total perimeter (sum of all segment lengths).
@@ -1128,5 +1248,106 @@ SQL Script: Contains DDL queries to create the database and tables.
         ![alt text](./asset/2023.07.30/image-1.png)
 <!-- by 钟章鸿 -->
 
+<!-- by 陈万程-->
 
+### The main functionalities and screenshots of the programs in the directory '2023.04.23'
 
+- 1.py
+
+![image-20250509131308724](./asset/2023.04.23/2023_04_23_1_py.png)
+
+This program is used to record the numbers input by the user that can be divisible by 7, and then output these numbers in reverse order. To use this program, we need to input numbers that are divisible by 7. When a number that is not divisible by 7 is input, the program will output in reverse order of the numbers that are divisible by 7 input by the user and end the program
+
+- 2.py
+
+![2_py.png](./asset/2023.04.23/2_py.png)
+
+This program is used to calculate the sum of the positive numbers of the input. If we want to use this program, we need to input the total number of numbers to be input, and then input the integers in sequence. After input, the program will provide the sum of the positive numbers in the numbers input by the user
+
+- 3.py
+
+![3_py.png](./asset/2023.04.23/3_py.png)
+
+This program is used to calculate the sum of all divisors of a number. When using this program, input a positive integer, and then the program will output the sum of all divisors of that number
+
+- 4.py
+
+![](./asset/2023.04.23/4_py.png)
+
+This program is used to calculate the total number of prime numbers in the specified number of digits. When using this program, users need to input an integer indicating the number of digits to be processed (for example, 3 represents three digits), and then the program will output an integer indicating the number of prime numbers within the digit range.
+
+- 5.py
+
+![](./asset/2023.04.23/5_py.png)
+
+This program is used to calculate the total cost of a piece of text. When using this program, users need to input a piece of text, and then the program will output the total cost of this text
+
+- 6.py
+
+![](./asset/2023.04.23/6_py.png)
+
+This program is used to determine whether a six-digit ticket is a "lucky ticket" (the sum of the first three digits is equal to the sum of the last three digits). When using this program, the user needs to input a six-digit number, and then the program will output "Yes" or "No".
+
+- 7.py
+
+![](./asset/2023.04.23/7_py.png)
+
+This program is used to remove all the specified punctuation marks in the text input by the user. When using this program, the user needs to input a string, and then the program will output a new string without the specified symbol
+
+- 8.py
+
+![](./asset/2023.04.23/8_py.png)
+
+This program is used to generate the Fibonacci sequence of the specified length. When using this program, users need to input a positive integer representing the length of the Fibonacci sequence to be output. Then the program will output a Fibonacci sequence separated by Spaces
+
+### The main functions and screenshots of the program in the directory '2023.04.30'
+
+- 1.py
+
+![](./asset/2023.04.30/1_py.png)
+
+This program is used to verify whether the format of the email address entered by the user complies with some basic rules. When using this program, enter an email address, and then the program will output "Yes" or "No" to indicate whether it is an email address that conforms to the rules
+
+- 2.py
+
+![](./asset/2023.04.30/2_py.png)
+
+This program is used to collect the fruit names input by users and output them in natural language. When using this program, you need to enter the fruit names as prompted. Pressing Enter directly indicates the end of the input, and then the program will output these fruit names in natural language.
+
+- 3.py
+
+![](./asset/2023.04.30/3_py.png)
+
+This program is used to determine whether the second list (' list_num2 ') input by the user is a consecutive subsequence of the first list (' list_num1 '). When using this program, users need to input two lists of positive integers separated by Spaces. Then the program will return 'Yes' or' No ', indicating whether the second list is a consecutive subsequence of the first list
+
+- 4.py
+
+![](./asset/2023.04.30/4_py.png)
+
+This program is used to find the key corresponding to the specified value in the key-value pairs input by the user. When using this program, users need to loop through multiple key-value pairs (with Spaces as intervals). Pressing Enter directly indicates the end of entering the key-value pairs. Then, enter the value you want to search for, and the program will output all the corresponding keys in the dictionary based on the values entered by the user. If the value does not exist, display an error message.	
+
+-  5.py
+
+![](./asset/2023.04.30/5_py.png)
+
+This program is used to calculate the total score corresponding to each letter (Russian letter) in the word input by the user (based on the given letter score dictionary). When using this program, users need to input one or more Russian words, and then the program will output the total score of the words as well as the score of each letter in the words
+
+- 6.py
+
+![](./asset/2023.04.30/6_py.png)
+
+This program is used to check whether the string input by the user meets the specific binary number format requirements. When using this program, the user needs to input a string (indicating possible strings), and then the program will output "Yes" or "No" to indicate whether the string meets the specific binary number format requirements
+
+- 7.py
+
+![](./asset/2023.04.30/7_py.png)
+
+This program is used to merge cities and their corresponding values from multiple dictionaries into a new dictionary, ensuring that all the values of each city are collected as a unique set of values. After running the program, it will merge all the cities and their values in the prepared dictionaries into a new dictionary and print it out in a specific format
+
+- 8.py
+
+![](./asset/2023.04.30/8_py.png)
+
+This program is used to handle a set of file names input by the user to ensure that the file names are unique when outputting. When using this program, users are required to input '; A list of separated file names. If there are duplicate file names, a sequence number will be added after the main file name, and the extension will remain unchanged. After processing, the processed file names will be output in alphabetical order, one per line.
+
+<!-- by 陈万程-->
