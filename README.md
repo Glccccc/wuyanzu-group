@@ -779,3 +779,208 @@ Saved as 2.2.sql file.
 Database Diagram: Created using dbdiagram.io or MySQL Workbench.
 SQL Script: Contains DDL queries to create the database and tables.
 <!--2023.10.15文件 #HW2023.10.15.2 by 刘兴发 -->
+
+<!-- by 裴河权 -->
+## 📮 Project Main Features Description and Screenshots
+
+### Tasks, Functions, and Usage Methods under the 2023.08.27/Files directory:
+
+1. **File System Management - Files and Folders**
+   *Functions:*
+   - This file contains the File class and Folder class, used to simulate file and folder management operations.
+   - The File class represents a file, including functions to get the file extension, path, etc.
+   - The Folder class represents a folder, supporting adding files and listing the contents of the folder.
+
+   *Parameters:*
+   - File class:
+     name: File name (string type).
+     dir: Directory path where the file is located (string type).
+   - Folder class:
+     elements: List of files or folders contained in the folder (list type).
+
+   *Return values:*
+   - File class:
+     extension(): Returns the file's extension (string type).
+     ls(): Returns the full path of the file (string type).
+   - Folder class:
+     ls(): Returns a list of paths of all files and folders in the directory (list type).
+
+   *Test method as follows:*
+   ```python
+   file1 = File(name="example.txt", dir="C:/Documents")
+   print(file1.extension())  # Output: txt
+   print(file1.ls())         # Output: C:/Documents/example.txt
+
+   folder = Folder([file1])
+   folder.add_elements(File(name="example2.txt", dir="C:/Documents"))
+   for obj in folder:
+       print(obj.ls())  # Output all file paths in the folder
+   ```
+
+   *Test result:*
+   txt
+   C:/Documents/example.txt
+   C:/Documents/example.txt
+   C:/Documents/example2.txt
+
+2. **Random Data Generation and Command Operations**
+   *Functions:*
+   - Generate random strings and numbers for test data, and support command execution, undo, and redo functions.
+
+   *Parameters:*
+   - TestCase class:
+     messages: List of randomly generated message strings.
+     numbers: List containing randomly generated numbers, length between 4 and 6 digits.
+   - TestCommand class:
+     operation: Type of operation (e.g., print message or number).
+     account: The test account object executing the operation.
+
+   *Return values:*
+   - TestCase class: No return value, only used to generate data.
+   - TestCommand class:
+     execute(): Executes the specified operation.
+     undo(): Undoes the last operation.
+     re_undo(): Redoes the last undone operation.
+
+   *Test method as follows:*
+   ```python
+   test = TestCase()
+   c1 = TestCommand(test, Operation.PRINT_MSG)
+   c1.execute()  # Execute print message operation
+   c1.undo()     # Undo operation
+   c1.re_undo()  # Redo operation
+   ```
+
+   *Test result:*
+   Operation execution: Print message
+   Undo operation: Print message
+   Redo operation: Print message
+
+3. **ClassBuilder-Dynamic Class Builder**
+   *Functions:*
+   - Dynamically generate Python classes, and allow adding instance attributes and class-level attributes.
+
+   *Parameters:*
+   - class_name: Name of the class (string).
+   - name: Name of the attribute (string).
+   - value: Value of the attribute (any type).
+
+   *Return values:*
+   - ClassBuilder class:
+     add_inst_attr(): Returns itself, supports chain calls.
+     add_cls_field(): Returns itself, supports chain calls.
+     __str__(): Returns a string representation of the class.
+
+   *Test method as follows:*
+   ```python
+   cb = ClassBuilder('Person').add_inst_attr('name', 'Liiya').add_inst_attr('age', 33)
+   print(cb)
+   ```
+
+   *Test result:*
+   ![alt text](./asset/2023.08.27/image1.png)
+
+4. **HTMLTag Builder**
+   *Functions:*
+   - Used to generate HTML tags, supporting nested tags and sibling tags.
+
+   *Parameters:*
+   - name: Tag name (string, e.g., div, p).
+   - value: Tag content or attribute (string).
+   - style: Tag style (string).
+
+   *Return value:*
+   - Returns an HTMLTag object, used for chainable tag construction.
+
+   *Test method as follows:*
+   ```python
+   root = HTMLBuilder('div')
+   div = HTMLTag.create('div', '500px', '500px')
+   div.sibling('p', 'Menu').nested('ul')
+       .sibling('li', 'File').sibling('li', 'Edit')
+   div.build()
+   ```
+
+   *Test result:*
+   ![alt text](./asset/2023.08.27/image2.png)
+
+5. **Resume Generator (CVBuilder)**
+   *Functions:*
+   - Used to generate HTML content for personal resumes.
+
+   *Parameters:*
+   - name: Personal name (string).
+   - age: Personal age (integer).
+   - field_of_employment: Employment field (string).
+
+   *Return value:*
+   - Returns the generated HTML resume code (string).
+
+   *Test method as follows:*
+   ```python
+   cv = CVBuilder('Liliya Martynova', 33, 'Web Developer')
+   cv.add_education('University of Python', 'Developer', '2022')
+   cv.add_project('Portfolio', 'portfolio.com')
+   cv.build()
+   ```
+
+   *Test result:*
+   ![alt text](./asset/2023.08.27/image3.png)
+
+6. **Operation Commands and Logging - Command Execution and Undo**
+   *Functions:*
+   - Executes commands, supports undo and redo, and maintains operation records.
+
+   *Parameters:*
+   - TestCommand class:
+     operation: Type of operation (e.g., print message or number).
+     account: The object executing the operation (TestCase).
+
+   *Return values:*
+   - TestCommand class:
+     execute(): Executes the command.
+     undo(): Undoes the command.
+     re_undo(): Redoes the command.
+
+   *Test method as follows:*
+   ```python
+   test = TestCase()
+   c1 = TestCommand(test, Operation.PRINT_MSG)
+   c1.execute()  # Execute command
+   c1.undo()     # Undo command
+   c1.re_undo()  # Redo command
+   ```
+
+   *Test result:*
+   ![alt text](./asset/2023.08.27/image4.png)
+
+7. **File System Management - Files and Folders**
+   *Functions:*
+   - Simulate file system operations, including getting file extensions, listing directory contents, etc.
+
+   *Parameters:*
+   - name: Name of the file or folder (string).
+   - dir_path: Path where the file or folder is located (string).
+
+   *Return values:*
+   - File class:
+     extension(): Returns the file extension (string).
+     ls(): Returns the file path (string).
+   - Folder class:
+     ls(): Lists the contents of the folder (list).
+
+   *Test method as follows:*
+   ```python
+   file1 = File(name="example.txt", dir="C:/Documents")
+   print(file1.extension())  # Output: txt
+   print(file1.ls())         # Output: C:/Documents/example.txt
+
+   folder = Folder([file1])
+   folder.add_elements(File(name="example2.txt", dir="C:/Documents"))
+   for obj in folder:
+       print(obj.ls())  # Output all file paths in the folder
+   ```
+
+   *Test result:*
+   ![alt text](./asset/2023.08.27/image5.png)
+<!-- by 裴河权 -->

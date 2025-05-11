@@ -941,3 +941,201 @@ mus_library/
 数据库图表：使用 dbdiagram.io 或 MySQL Workbench 创建。
 SQL 脚本：包含创建数据库和表的 DDL 查询。
 <!--2023.10.15文件 #HW2023.10.15.2 by 刘兴发 -->
+
+<!-- by 裴河权 -->
+
+## 📮 项目主要功能说明与截图
+
+### 2023.08.27/文件下的任务、功能及使用方法：  
+1. **文件系统管理 - 文件和文件夹**
+    *功能：*   
+    - 该文件包含 File 类和 Folder 类，用于模拟文件和文件夹的管理操作。
+    - File 类表示一个文件，包含获取文件扩展名、路径等功能。
+    - Folder 类表示文件夹，支持添加文件和列出文件夹中的内容。
+
+    *参数：*   
+    - File 类：
+      name：文件名（字符串类型）。
+      dir：文件所在目录路径（字符串类型）。
+    - Folder 类：
+      elements：文件夹中包含的文件或文件夹列表（列表类型）。
+
+    *返回值：*
+    - File 类：
+      extension()：返回文件的扩展名（字符串类型）。
+      ls()：返回文件的完整路径（字符串类型）。
+    - Folder 类：
+      ls()：返回文件夹中所有文件和文件夹的路径列表（列表类型）。
+
+    *测试方法如下：*  
+    ```python
+    file1 = File(name="example.txt", dir="C:/Documents")
+    print(file1.extension())  # 输出：txt
+    print(file1.ls())         # 输出：C:/Documents/example.txt
+
+    folder = Folder([file1])
+    folder.add_elements(File(name="example2.txt", dir="C:/Documents"))
+    for obj in folder:
+    print(obj.ls())  # 输出文件夹中的所有文件路径
+    ```
+    *测试结果：*  
+        txt
+    C:/Documents/example.txt
+    C:/Documents/example.txt
+    C:/Documents/example2.txt
+
+2. **随机数据生成与命令操作**
+   *功能：*   
+    - 生成随机字符串和随机数字的测试数据，并支持命令执行、撤销和重做功能。
+
+    *参数：*   
+    - TestCase 类：
+      messages：随机生成的消息字符串列表。
+      numbers：包含随机数字的列表，长度为 4 至 6 个数字。
+    - TestCommand 类：
+      operation：操作类型（如打印消息或数字）。
+      account：执行操作的测试账户对象。
+
+    *返回值：*
+    - TestCase 类：无返回值，仅用于生成数据。
+    - TestCommand 类：
+      execute()：执行指定的操作。
+      undo()：撤销上一个操作。
+      re_undo()：重做上一个撤销的操作。
+
+    *测试方法如下：*  
+    ```python
+    test = TestCase()
+    c1 = TestCommand(test, Operation.PRINT_MSG)
+    c1.execute()  # 执行打印消息操作
+    c1.undo()     # 撤销操作
+    c1.re_undo()  # 重做操作
+    ```
+    *测试结果：*  
+    执行操作：打印消息
+    撤销操作：打印消息
+    重做操作：打印消息
+
+3. **ClassBuilder-动态类构建器**
+   *功能：*   
+    - 动态生成 Python 类，并允许添加实例属性和类级属性。
+
+    *参数：*   
+    - class_name：类的名称（字符串类型）。
+    - name：属性的名称（字符串类型）。
+    - value：属性的值（可以是任意类型）。
+
+    *返回值：*
+    - ClassBuilder 类：
+      add_inst_attr()：返回自身，支持链式调用。
+      add_cls_field()：返回自身，支持链式调用。
+      __str__()：返回类的字符串表示。
+
+    *测试方法如下：*  
+    ```python
+    cb = ClassBuilder('Person').add_inst_attr('name', 'Liiya').add_inst_attr('age', 33)
+    print(cb)
+    ```
+    *测试结果：*  
+    ![alt text](./asset/2023.08.27/image1.png)  
+
+4. **HTMLTag 构建器**
+   *功能：*   
+    - 用于生成 HTML 标签，支持嵌套标签和兄弟标签。
+
+    *参数：*   
+    - name：标签的名称（字符串类型，如 div、p）。
+    - value：标签的内容或属性（字符串类型）。
+    - style：标签的样式（字符串类型）。
+
+    *返回值：*
+    - 返回 HTMLTag 对象，用于链式调用构建标签。
+
+    *测试方法如下：*  
+    ```python
+    root = HTMLBuilder('div')
+    div = HTMLTag.create('div', '500px', '500px')
+    div.sibling('p', 'Menu').nested('ul')
+        .sibling('li', 'File').sibling('li', 'Edit')
+    div.build()
+    ```
+    *测试结果：*  
+    ![alt text](./asset/2023.08.27/image2.png)
+
+5. **简历生成器(CVBuilder)**
+   *功能：*   
+    - 用于生成个人简历的 HTML 内容。
+
+    *参数：*   
+    - name：个人名字（字符串类型）。
+    - age：个人年龄（整数类型）。
+    - field_of_employment：就业领域（字符串类型）。
+
+    *返回值：*
+    - 返回生成的 HTML 简历代码（字符串类型）。
+
+    *测试方法如下：*  
+    ```python
+    cv = CVBuilder('Liliya Martynova', 33, 'Web Developer')
+    cv.add_education('University of Python', 'Developer', '2022')
+    cv.add_project('Portfolio', 'portfolio.com')
+    cv.build()
+    ```
+    *测试结果：*  
+    ![alt text](./asset/2023.08.27/image3.png)
+
+6. **操作命令和日志-操作执行与撤销**
+   *功能：*   
+    - 执行、撤销和重做操作，支持操作记录。
+
+    *参数：*   
+    - TestCommand 类：
+      operation：操作类型（如打印消息或数字）。
+      account：执行操作的对象（TestCase）。
+
+    *返回值：*
+    - TestCommand 类：
+      execute()：执行命令。
+      undo()：撤销命令。
+      re_undo()：重做命令。
+
+    *测试方法如下：*  
+    ```python
+    test = TestCase()
+    c1 = TestCommand(test, Operation.PRINT_MSG)
+    c1.execute()  # 执行打印消息操作
+    c1.undo()     # 撤销操作
+    c1.re_undo()  # 重做操作
+    ```
+    *测试结果：*  
+    ![alt text](./asset/2023.08.27/image4.png)
+
+7. **文件系统管理-文件和文件夹**
+   *功能：*   
+    - 模拟文件系统操作，包括获取文件扩展名、列出文件路径、文件夹内容等。
+
+    *参数：*   
+    - name：文件或文件夹的名称（字符串类型）。
+    - dir_path：文件或文件夹所在的路径（字符串类型）。
+
+    *返回值：*
+    - File 类：
+      extension()：返回文件的扩展名（字符串类型）。
+      ls()：返回文件的路径（字符串类型）。
+    - Folder 类：
+      ls()：列出文件夹中的内容（列表类型）。
+
+    *测试方法如下：*  
+    ```python
+    file1 = File(name="example.txt", dir="C:/Documents")
+    print(file1.extension())  # 输出：txt
+    print(file1.ls())         # 输出：C:/Documents/example.txt
+
+    folder = Folder([file1])
+    folder.add_elements(File(name="example2.txt", dir="C:/Documents"))
+    for obj in folder:
+        print(obj.ls())  # 输出文件夹中的所有文件路径
+    ```
+    *测试结果：*  
+    ![alt text](./asset/2023.08.27/image5.png)
+<!-- by 裴河权 -->
