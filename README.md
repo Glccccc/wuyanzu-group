@@ -53,7 +53,7 @@ wuyanzu-group/
 ### Tasks and Instructions for 2023.05.14 Files
 
 1. **Implement the strong_password Function**
-    
+   
     *Function:* Checks if a password is strong.
     
     *Parameters:*
@@ -76,7 +76,7 @@ wuyanzu-group/
     ![alt text](./asset/2023.05.14/image-2.png)
 
 2. **Implement the taxi_cost Function**
-    
+   
     *Function:* Calculates the taxi fare.
     
     *Parameters:*
@@ -101,7 +101,7 @@ wuyanzu-group/
     ![alt text](./asset/2023.05.14/image-3.png)
 
 3. **Implement the numbers_strip Function**
-    
+   
     *Function:* Removes the n smallest and largest numbers from a list.
     
     *Parameters:*
@@ -123,7 +123,7 @@ wuyanzu-group/
     ![alt text](./asset/2023.05.14/image-4.png)
 
 4. **Implement the countable_nouns Function**
-    
+   
     *Function:* Selects the appropriate Russian noun form based on the numeral.
     
     *Parameters:*
@@ -141,7 +141,7 @@ wuyanzu-group/
     ![alt text](./asset/2023.05.14/image-5.png)
 
 5. **Implement the central_tendency Function**
-    
+   
     *Function:* Calculates the measures of central tendency for a set of numbers.
     
     *Parameters:*
@@ -165,7 +165,7 @@ wuyanzu-group/
     ![alt text](./asset/2023.05.14/image-6.png)
 
 6. **Implement the orth_triangle Function**
-    
+   
     *Function:* Calculates the third side of a right-angled triangle.
     
     *Parameters:*
@@ -810,7 +810,7 @@ SQL Script: Contains DDL queries to create the database and tables.
    file1 = File(name="example.txt", dir="C:/Documents")
    print(file1.extension())  # Output: txt
    print(file1.ls())         # Output: C:/Documents/example.txt
-
+   
    folder = Folder([file1])
    folder.add_elements(File(name="example2.txt", dir="C:/Documents"))
    for obj in folder:
@@ -974,7 +974,7 @@ SQL Script: Contains DDL queries to create the database and tables.
    file1 = File(name="example.txt", dir="C:/Documents")
    print(file1.extension())  # Output: txt
    print(file1.ls())         # Output: C:/Documents/example.txt
-
+   
    folder = Folder([file1])
    folder.add_elements(File(name="example2.txt", dir="C:/Documents"))
    for obj in folder:
@@ -983,7 +983,7 @@ SQL Script: Contains DDL queries to create the database and tables.
 
    *Test result:*
    ![alt text](./asset/2023.08.27/image5.png)
-<!-- by 裴河权 -->
+   <!-- by 裴河权 -->
 
 ## 📮 Project Main Function Description and Screenshots
 <!-- by 钟章鸿 -->
@@ -1035,13 +1035,13 @@ SQL Script: Contains DDL queries to create the database and tables.
 
         __repr__():
             Function: Returns the string representation of the King piece, used for debugging.
-
+    
         __str__():
             Function: Returns the string representation of the King piece, used for printing.
-
+    
         is_turn_valid(new_square):
             Function: Checks whether a move from the current square to the new square is valid for a King. Returns True if the move is legal, False otherwise.
-
+    
         turn(new_square):
             Function: Performs the move from the current square to the target square.
 
@@ -1057,7 +1057,7 @@ SQL Script: Contains DDL queries to create the database and tables.
 
         pick(number, word):
             Function: Based on the input number and base form of the noun, returns the correct noun form.
-
+        
         save_words(word1):
             Function: Through interactive input, adds new noun forms to the internal words dictionary and words.csv file. If word1 is not provided, prompts the user for input.
 
@@ -1070,55 +1070,55 @@ SQL Script: Contains DDL queries to create the database and tables.
     Point Class
 
         Functionality:
-
+    
             Stores coordinates of a point (x and y).
-
+    
             Provides read-only attributes.
-
+    
             Supports comparison and string representation.
-
+    
         Parameters:
-
+    
             x: float, y: float
-
+    
         Methods:
-
+    
             __eq__(): Compares two points (equal if both x and y are equal).
-
+    
             __str__() and __repr__(): Returns the string representation of the point.
 
     Line Class
 
         Functionality:
              a line segment defined by two points (start and end), supports length calculation and dynamic updating of endpoints.
-
+    
         Parameters:
-
+    
             start: Point
-
+    
             end: Point
-
+    
         Methods:
-
+    
             length_calc(): Calculates the distance between the two points (i.e., the length of the line segment).
-
+    
             start(), end(): Endpoints can be dynamically updated but must be assigned as Point objects; otherwise, a TypeError is raised.
-
+    
             __str__() and __repr__(): Returns the string representation of the line.
 
     Polygon Class
 
         Functionality:
             Represents a polygon composed of multiple line segments. Supports checking whether the polygon is closed and calculating its perimeter.
-
+    
         Methods:
-
+    
             is_closed():
                 Function: 
                     Checks whether the polygon is closed:
                     Whether the first and last segments are connected.
                     Whether each segment’s endpoint connects to the next segment’s start point.
-
+    
             perimeter():
                 Function: 
                     Calculates the total perimeter (sum of all segment lengths).
@@ -1128,5 +1128,58 @@ SQL Script: Contains DDL queries to create the database and tables.
         ![alt text](./asset/2023.07.30/image-1.png)
 <!-- by 钟章鸿 -->
 
+<!-- by 陈万程-->
+
+### The main functionalities and screenshots of the programs in the directory '2023.04.23'
+
+- 1.py
+
+![image-20250509131308724](./../../../专业英语（二）作业/wuyanzu-group/asset/2023.04.23/2023_04_23_1_py.png)
+
+This program is used to record the numbers input by the user that can be divisible by 7, and then output these numbers in reverse order. To use this program, we need to input numbers that are divisible by 7. When a number that is not divisible by 7 is input, the program will output in reverse order of the numbers that are divisible by 7 input by the user and end the program
+
+- 2.py
+
+![2_py.png](./../../../专业英语（二）作业/wuyanzu-group/asset/2023.04.23/2_py.png)
+
+This program is used to calculate the sum of the positive numbers of the input. If we want to use this program, we need to input the total number of numbers to be input, and then input the integers in sequence. After input, the program will provide the sum of the positive numbers in the numbers input by the user
+
+- 3.py
+
+![3_py.png](./../../../专业英语（二）作业/wuyanzu-group/asset/2023.04.23/3_py.png)
+
+This program is used to calculate the sum of all divisors of a number. When using this program, input a positive integer, and then the program will output the sum of all divisors of that number
+
+- 4.py
+
+![](./../../../专业英语（二）作业/wuyanzu-group/asset/2023.04.23/4_py.png)
+
+This program is used to calculate the total number of prime numbers in the specified number of digits. When using this program, users need to input an integer indicating the number of digits to be processed (for example, 3 represents three digits), and then the program will output an integer indicating the number of prime numbers within the digit range.
+
+- 5.py
+
+![](./../../../专业英语（二）作业/wuyanzu-group/asset/2023.04.23/5_py.png)
+
+This program is used to calculate the total cost of a piece of text. When using this program, users need to input a piece of text, and then the program will output the total cost of this text
+
+- 6.py
+
+![](./../../../专业英语（二）作业/wuyanzu-group/asset/2023.04.23/6_py.png)
+
+This program is used to determine whether a six-digit ticket is a "lucky ticket" (the sum of the first three digits is equal to the sum of the last three digits). When using this program, the user needs to input a six-digit number, and then the program will output "Yes" or "No".
+
+- 7.py
+
+![](./../../../专业英语（二）作业/wuyanzu-group/asset/2023.04.23/7_py.png)
+
+This program is used to remove all the specified punctuation marks in the text input by the user. When using this program, the user needs to input a string, and then the program will output a new string without the specified symbol
+
+- 8.py
+
+![](./../../../专业英语（二）作业/wuyanzu-group/asset/2023.04.23/8_py.png)
+
+This program is used to generate the Fibonacci sequence of the specified length. When using this program, users need to input a positive integer representing the length of the Fibonacci sequence to be output. Then the program will output a Fibonacci sequence separated by Spaces
 
 
+
+<!-- by 陈万程-->
