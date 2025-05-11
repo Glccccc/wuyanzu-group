@@ -1,35 +1,37 @@
-from pathlib import Path
-from sys import path
+from pathlib import Path  # 导入Path类用于处理文件和目录路径
+from sys import path  # 导入sys.path用于获取当前工作目录
 
 
 def search_context(keyword: str, *words: str, context: int = 0) -> list[dict]:
-    
-    """Осуществляет поиск в текстовых файлах строчек, содержащих ключевые слова"""
-        
-    dir_path = Path(path[0]) / 'data'
-    
-    txt_files = [file for file in dir_path.iterdir() if file.suffix == '.txt']
-    words = list(map(lambda x: x.lower(), (keyword, *words)))
+    """
+    在data目录下所有txt文件中查找包含指定关键字的行，并可选返回上下文行。
+    :param keyword: 主关键字
+    :param words: 其他关键字
+    :param context: 上下文行数，默认为0
+    :return: 包含匹配信息的字典列表
+    """
+    dir_path = Path(path[0]) / 'data'  # 获取data目录路径
+    txt_files = [file for file in dir_path.iterdir() if file.suffix == '.txt']  # 获取所有txt文件
+    words = list(map(lambda x: x.lower(), (keyword, *words)))  # 所有关键字转小写
     res_dict = []
-     
+    
     for file in txt_files:
         with open(file, encoding='utf-8') as filein:
-            lines = [line for line in filein]
+            lines = [line for line in filein]  # 读取所有行
 
         for line in lines:
-            index_line = 1 + lines.index(line)
+            index_line = 1 + lines.index(line)  # 当前行为第几行
             for word in words:
-                if word in line.lower():
-                    text = ''.join(lines[ index_line-1-context : index_line+context ])
+                if word in line.lower():  # 判断关键字是否在行中
+                    text = ''.join(lines[ index_line-1-context : index_line+context ])  # 获取上下文
                     res_dict.append({
-                        'keyword': word,
-                        'filename': file.name,
-                        'line': index_line,
-                        'context': context,
-                        'text': text.strip('\n')
+                        'keyword': word,  # 匹配到的关键字
+                        'filename': file.name,  # 文件名
+                        'line': index_line,  # 行号
+                        'context': context,  # 上下文行数
+                        'text': text.strip('\n')  # 匹配文本
                     })
-   
-    return res_dict 
+    return res_dict  # 返回所有匹配结果
 
 
 # >>> from pprint import pprint    
