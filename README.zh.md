@@ -704,37 +704,25 @@ wuyanzu-group/
 一个简单的命令行界面（CLI）应用程序，用于验证电子邮件地址的正确性，并将有效的电子邮件地址保存到文件中。
 
 #####  项目特点
-
 -  验证输入的电子邮件地址是否正确
 -  将有效的电子邮件地址保存到文件
 -  数据保存在本地文本文件中
 -  简洁的命令行界面，易于使用
 
+
 #####  快速开始
-
-###### 克隆项目
-
-```bash
-git clone https://github.com/zaizai913/wuyanzu-group.git
-cd Email Validator 
-
-
 # 安装依赖
-
 ```bash
 pip install -r requirements.txt
 ```
 
 ###### 启动项目
-
 ```bash
 python 1.py
 ```
-
 项目将启动命令行界面，等待用户输入电子邮件地址。
 
 ######  项目结构
-
 ```
 EmailValidator/
 ├── model.py            # 数据处理和存储模型
@@ -744,8 +732,7 @@ EmailValidator/
 └── README.md
 ```
 
-#####  项目主要功能说明与截图
-
+####  项目主要功能说明与截图
 ##### 1.py
 这是程序的入口文件，负责启动应用程序。
 
@@ -753,6 +740,8 @@ EmailValidator/
         导入 controller 模块。
         在 main 函数中，创建 Application 类的实例并调用其 input_email 方法。
         使用 if __name__ == '__main__': 确保直接运行此文件时才会执行 main 函数。
+
+![alt text](2023.09.10/images/screenshot3.png)
 
 ###### controller.py
 控制器模块，负责协调模型和视图之间的交互。
@@ -770,6 +759,8 @@ EmailValidator/
                 如果用户输入空字符串，退出循环。
                 否则，调用 save_email 方法处理输入的地址。
 
+![alt text](2023.09.10/images/screenshot4.png)
+
 ###### model.py
 模型模块，负责数据处理和存储。
 
@@ -782,6 +773,8 @@ EmailValidator/
             提供静态方法 add_email，将电子邮件地址追加到指定文件中。
             默认保存路径为程序运行目录下的 emails.txt 文件。
 
+![alt text](2023.09.10/images/screenshot5.png)
+
 ###### view.py
 视图模块，负责与用户交互。
 
@@ -791,6 +784,8 @@ EmailValidator/
             invalid_email：向用户显示地址无效的消息。
             save_email：向用户显示地址成功保存的消息。
 
+![alt text](2023.09.10/images/screenshot6.png)
+---
 
 1.输入电子邮件地址
 ![alt text](2023.09.10/images/screenshot1.png)
@@ -805,8 +800,9 @@ EmailValidator/
 
 <!--2023.10.15文件 by 刘兴发 -->
 <!--2023.10.15文件 #HW2023.10.15.1 by 刘兴发 -->
-### 2023.10.15文件下的任务、功能及使用方法：  
-#### 数据库安装与配置指南
+### 2023.10.15文件下的任务、功能及使用方法： 
+
+#### 数据库安装与配置
 ##### 安装软件
 对于 Windows 操作系统，下载 MySQL Installer 安装包：
 [MySQL :: Download MySQL Installer](https://dev.mysql.com/downloads/installer/) 
@@ -832,8 +828,8 @@ EmailValidator/
 \connect root@localhost:3306
 \sql
 show databases;
-
 ```
+![alt text](2023.10.15/1.2.png)
 <!--2023.10.15文件 #HW2023.10.15.1 by 刘兴发 -->
 
 
@@ -844,7 +840,6 @@ show databases;
 一个用于管理音乐收藏的数据库系统，支持艺术家、音乐合集、歌曲、风格和发行商的信息管理。
 
 ####  项目特点
-
 -  管理艺术家信息
 -  管理音乐合集信息
 -  管理歌曲信息
@@ -855,14 +850,12 @@ show databases;
 ####  快速开始
 
 ##### 1. 安装 MySQL
-
 - **Windows**：下载并安装 MySQL Installer：
   [MySQL :: Download MySQL Installer](https://dev.mysql.com/downloads/installer/)
 - **其他操作系统**：下载并安装 MySQL 社区版：
   [MySQL :: MySQL Community Downloads](https://dev.mysql.com/downloads/)
 
 ##### 2. 创建数据库和表
-
 运行以下 SQL 脚本创建数据库和表：
 
 ```sql
@@ -922,7 +915,6 @@ create table songs (
 将上述 SQL 脚本保存到名为 2.2.sql 的文件中。
 
 ####  项目结构
-
 mus_library/
 ├── 2.1.png          # 数据库图表
 ├── 2.2.sql          # SQL 脚本
