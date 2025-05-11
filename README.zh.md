@@ -1125,6 +1125,139 @@ SQL 脚本：包含创建数据库和表的 DDL 查询。
     ```
     *测试结果：*  
     ![alt text](./asset/2023.08.27/image5.png)
+
+### 2023.09.03/文件下的任务、功能及使用方法：
+1. **国际象棋游戏管理器**
+    *功能：*   
+    - 实现了一个国际象棋游戏管理模块，主要负责棋步记录和游戏状态管理。
+
+    *核心类说明：*   
+    - Turn 类：
+      功能：存储单步棋的所有关键信息
+      参数：
+      piece: 移动的棋子对象
+      start_square: 起始位置坐标
+      end_square: 目标位置坐标
+      turn_count: 回合计数器
+    - Game 类：
+      功能：管理整个棋局的生命周期
+      主要方法：
+      move(start_square, end_square):
+      参数：两个坐标字符串(如"a2", "a4")
+      执行：移动棋子并记录棋步
+      history_turns():
+      打印所有历史棋步
+      rollback_game(turn_count):
+      参数：目标回合数
+      功能：回退游戏到指定回合状态
+
+    *返回值：*
+    - File 类：
+      extension()：返回文件的扩展名（字符串类型）。
+      ls()：返回文件的路径（字符串类型）。
+    - Folder 类：
+      ls()：列出文件夹中的内容（列表类型）。
+
+    *测试方法如下：*  
+    ```python
+    game = Game()
+    game.move('a1','a3')
+    game.move('b1','b3')
+    game.move('c1','c3')
+    ```
+    *测试结果：*  
+    ![alt text](./asset/2023.09.03/image1.png)
+
+2. **Chessboard 类结构解析 (chess.png 内容)**
+
+    1. Chessboard (棋盘主类)
+      核心功能：
+      __init__(): 初始化空棋盘
+      __post_init__(): 设置初始棋子布局
+      __rank(): 获取指定行的所有格子
+      __getitem__(): 支持多种坐标访问方式
+      关键特性：
+      通过嵌套的File类管理棋盘纵列
+      支持board["a1"]和board["a"][1]两种访问方式
+      自动初始化标准开局布局
+
+    2. File (棋盘纵列)
+      构造方法：
+      __init__(file: str, start_color: SquareColor)
+      参数说明：
+      file: 列字母(a-h)
+      start_color: 该列起始格颜色
+
+    3. Square (棋盘格子)
+      属性：
+      color: 格子颜色(LIGHT/DARK)
+      file: 列标识(a-h)
+      rank: 行标识(1-8)
+      piece: 当前格子的棋子(可选)
+      方法：
+      __repr__(): 开发调试用表示
+      __str__(): 返回坐标字符串(如"a1")
+
+    4. Piece (棋子)
+      关键属性：
+      color: 棋子颜色(WHITE/BLACK)
+      kind: 棋子类型(6种)
+      square: 当前所在格子
+      removed: 是否被移除标记
+      核心方法：
+      move(end_square): 执行移动和吃子逻辑
+      __del__(): 自动处理棋子移除
+      字符串表示：
+      __str__(): 简写(如"WP"白兵)
+      __repr__(): 完整名称(如"White Pawn")
+
+    5. 枚举类型
+      SquareColor:
+      LIGHT: 浅色格子
+      DARK: 深色格子
+      PieceColor:
+      WHITE: 白方
+      BLACK: 黑方
+      PieceKind:
+      6种标准棋子：王、后、车、象、马、兵
+
+3. **国际象棋核心引擎**
+    *功能：*   
+    - 实现了国际象棋的核心数据结构和基础规则。
+
+    *核心组件：*   
+    - 枚举类型：
+      SquareColor: 棋盘格颜色(LIGHT/DARK)
+      PieceColor: 棋子颜色(WHITE/BLACK)
+      PieceKind: 棋子类型(6种标准棋子)
+    - Piece 类：
+      功能：表示单个棋子
+      主要方法：
+      move(end_square): 执行移动和吃子逻辑
+      自动处理被吃棋子的移除
+    - Square 类：
+      功能：表示棋盘单个格子
+      属性：颜色、坐标、当前棋子
+    - Chessboard 类：
+      功能：完整的棋盘表示
+      特性：
+      支持多种坐标访问方式("a1"或行列分开)
+      自动初始化标准开局布局
+      嵌套File类管理棋盘纵列
+
+4. **字体文件**
+    DejaVuSans.ttf
+    FreeSerif.ttf
+    Quivira.ttf
+    类型：TrueType字体
+    用途：
+      显示棋盘坐标标签
+      游戏界面文字渲染
+      可能用于显示特殊象棋符号（如棋子图示）
+    特点：
+      DejaVuSans：无衬线字体，适合界面显示
+      FreeSerif：衬线字体，适合正式文本
+      Quivira：包含大量Unicode符号，可能用于显示棋子图形
 <!-- by 裴河权 -->
 
 <!-- by 钟章鸿 -->

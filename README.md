@@ -970,6 +970,139 @@ SQL Script: Contains DDL queries to create the database and tables.
 
    *Test result:*
    ![alt text](./asset/2023.08.27/image5.png)
+
+### 2023.09.03/files tasks, functions, and usage methods:
+1. **International Chess Game Manager**
+    *Function:*   
+    - Implements an international chess game management module, mainly responsible for move recording and game state management.
+
+    *Core Class Descriptions:*   
+    - Turn Class:
+      Function: Stores all key information of a single move
+      Parameters:
+      piece: the moving piece object
+      start_square: starting position coordinate
+      end_square: target position coordinate
+      turn_count: turn counter
+    - Game Class:
+      Function: Manages the entire game lifecycle
+      Main methods:
+      move(start_square, end_square):
+      Parameters: two coordinate strings (e.g., "a2", "a4")
+      Executes: moves a piece and records the move
+      history_turns():
+      Prints all historical moves
+      rollback_game(turn_count):
+      Parameters: target turn number
+      Function: Roll back the game to the specified turn state
+
+    *Return Values:*
+    - File Class:
+      extension(): Returns the file extension (string type).
+      ls(): Returns the file path (string type).
+    - Folder Class:
+      ls(): Lists the contents of the folder (list type).
+
+    *Test Method as follows:*  
+    ```python
+    game = Game()
+    game.move('a1','a3')
+    game.move('b1','b3')
+    game.move('c1','c3')
+    ```
+    *Test Result:*  
+    ![alt text](./asset/2023.09.03/image1.png)
+
+2. **Chessboard Class Structure Analysis (chess.png content)**
+
+    1. Chessboard (Main class)
+      Core functions:
+      __init__(): Initialize an empty board
+      __post_init__(): Set up the initial piece layout
+      __rank(): Get all squares in a specified rank
+      __getitem__(): Support multiple coordinate access methods
+      Key features:
+      Manages board columns through nested File classes
+      Supports board["a1"] and board["a"][1] access methods
+      Automatically initializes the standard opening layout
+
+    2. File (Board column)
+      Constructor:
+      __init__(file: str, start_color: SquareColor)
+      Parameters:
+      file: column letter (a-h)
+      start_color: starting square color of the column
+
+    3. Square (Board square)
+      Properties:
+      color: SquareColor (LIGHT/DARK)
+      file: column label (a-h)
+      rank: row label (1-8)
+      piece: current piece on the square (optional)
+      Methods:
+      __repr__(): developer debugging representation
+      __str__(): returns coordinate string (e.g., "a1")
+
+    4. Piece (Chess piece)
+      Key properties:
+      color: piece color (WHITE/BLACK)
+      kind: piece type (6 types)
+      square: current position square
+      removed: whether it has been captured
+      Core methods:
+      move(end_square): execute movement and capture logic
+      __del__(): automatically handles piece removal
+      String representation:
+      __str__(): short form (e.g., "WP" for White Pawn)
+      __repr__(): full name (e.g., "White Pawn")
+
+    5. Enumeration types:
+      SquareColor:
+      LIGHT: Light-colored square
+      DARK: Dark-colored square
+      PieceColor:
+      WHITE: White side
+      BLACK: Black side
+      PieceKind:
+      6 standard chess pieces: King, Queen, Rook, Bishop, Knight, Pawn
+
+3. **Core Chess Engine**
+    *Function:*   
+    - Implements core data structures and basic rules of chess.
+
+    *Core Components:*   
+    - Enum types:
+      SquareColor: board square color (LIGHT/DARK)
+      PieceColor: piece color (WHITE/BLACK)
+      PieceKind: piece type (6 types)
+    - Piece Class:
+      Function: represents a single chess piece
+      Main methods:
+      move(end_square): executes move and capture logic
+      Automatically handles captured pieces removal
+    - Square Class:
+      Function: represents a single board square
+      Properties: color, coordinate, current piece
+    - Chessboard Class:
+      Function: complete board representation
+      Features:
+      Supports multiple coordinate access methods ("a1" or separate row/column)
+      Automatically initializes standard opening layout
+      Nested File classes manage board columns
+
+4. **Font Files**
+    DejaVuSans.ttf
+    FreeSerif.ttf
+    Quivira.ttf
+    Type: TrueType fonts
+    Uses:
+      Displaying board coordinate labels
+      Text rendering in game interface
+      Possibly for displaying special chess symbols (e.g., piece icons)
+    Features:
+      DejaVuSans: Sans-serif font, suitable for interface display
+      FreeSerif: Serif font, suitable for formal text
+      Quivira: Contains many Unicode symbols, possibly for showing chess piece graphics
    <!-- by 裴河权 -->
 
 ## 📮 Project Main Function Description and Screenshots
