@@ -535,42 +535,31 @@ wuyanzu-group/
 
 
 <!--2023.09.10文件    by 刘兴发 -->
-# Email Validator
+### Tasks, functions, and usage methods under document 2023.09.10:
+#### Email Validator
 
 A lightweight and easy-to-use command-line tool for validating email addresses and saving valid ones to a file.
 
-## ✨ Features
+#####  Features
+-  Verify if the entered email address is correct
+-  Save a valid email address to a file
+-  Data is saved in a local text file
+-  Simple command-line interface, easy to use
 
-- 📝 Verify if the entered email address is correct
-- ✅ Save a valid email address to a file
-- 💾 Data is saved in a local text file
-- 🎨 Simple command-line interface, easy to use
 
-## 🚀 Getting Started
-
-### Clone the repository
-
-```bash
-git clone https://github.com/zaizai913/wuyanzu-group.git
-cd Email Validator
-```
-
-### Install dependencies
-
+#####  Getting Started
+###### Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### Run the app
-
+###### Run the app
 ```bash
 python 1.py
 ```
-
 The application will launch a command-line interface, prompting you to enter email addresses.
 
-## 📦 Project Structure
-
+######  Project Structure
 ```
 EmailValidator/
 ├── model.py            # Data processing and storage model
@@ -580,9 +569,8 @@ EmailValidator/
 └── README.md
 ```
 
-## 📮 Primary function & Screenshot
-
-## 1.py
+####  Primary function & Screenshot
+##### 1.py
 This is the entry file of the program, responsible for launching the application.
 
 Functionality:
@@ -590,7 +578,9 @@ Functionality:
     In the main function, create an instance of the Application class and call its input_email method.
     Use if __name__ == '__main__': to ensure that the main function is executed only when this file is run directly.
 
-## controller.py
+![alt text](2023.09.10/images/screenshot3.png)
+
+###### controller.py
 The controller module, responsible for coordinating the interaction between the model and the view.
 
 Functionality:
@@ -606,7 +596,9 @@ Functionality:
             If the user inputs an empty string, exit the loop.
             Otherwise, call the save_email method to process the input address.
 
-## model.py
+![alt text](2023.09.10/images/screenshot4.png)
+
+###### model.py
 The model module, responsible for data processing and storage.
 
 Functionality:
@@ -618,7 +610,9 @@ Functionality:
         Provide the static method add_email to append the email address to the specified file.
         The default save path is the emails.txt file in the program's running directory.
 
-## view.py
+![alt text](2023.09.10/images/screenshot5.png)
+
+###### view.py
 The view module, responsible for user interaction.
 
 Functionality:
@@ -627,24 +621,25 @@ Functionality:
         invalid_email: Display an invalid address message to the user.
         save_email: Display a successful save message to the user.
 
+![alt text](2023.09.10/images/screenshot6.png)
+---
 
 1.Enter an email address
-
-[Image...]
 ![alt text](2023.09.10/images/screenshot1.png)
 
 2.Display validation results
-
-[Image...]
 ![alt text](2023.09.10/images/screenshot2.png)
 
+---
 <!--2023.09.10文件 by 刘兴发 -->
 
 
 <!--2023.10.15文件 by 刘兴发 -->
 <!--2023.10.15文件 #HW2023.10.15.1 by 刘兴发 -->
-# Database Installation and Configuration Guide
-## Software Installation
+### Tasks, functions, and usage methods under document 2023.10.15:
+
+#### Database installation and configuration
+##### Software Installation
 For Windows OS, download the MySQL Installer package:
 [MySQL :: Download MySQL Installer](https://dev.mysql.com/downloads/installer/) 
 
@@ -669,41 +664,34 @@ To test functionality, execute the following commands sequentially in the MySQL 
 \connect root@localhost:3306
 \sql
 show databases;
-
 ```
+![alt text](2023.10.15/1.2.png)
+<!--2023.10.15文件 #HW2023.10.15.1 by 刘兴发 -->
 
-Take screenshots:
-    Task Manager window with the local MySQL server service highlighted
-    MySQL Shell window with executed commands (output of all commands should be visible)
-    MySQL Workbench window logged into the local server connection (navigation panel, editor window, etc., should be visible)
-========================
-Place the screenshots in the current repository directory as JPG or PNG files named 1.1, 1.2, and 1.3, respectively.
 
 <!--2023.10.15文件 #HW2023.10.15.2 by 刘兴发 -->
-# Music Collection Management System
+### Tasks, functions, and usage methods under document 2023.10.15:
+### Music Collection Management System
 
 A database system for managing a music collection, supporting information management for artists, music albums, songs, genres, and publishers.
 
-## ✨ Features
+#### Features
+-  Manage artist information
+-  Manage music album information
+-  Manage song information
+-  Manage music genres
+-  Manage publishers
+-  Database design and modeling
 
-- 🎵 Manage artist information
-- 📀 Manage music album information
-- 🎶 Manage song information
-- 🎭 Manage music genres
-- 🌐 Manage publishers
-- 📐 Database design and modeling
+####  Getting Started
 
-## 🚀 Getting Started
-
-### 1. Install MySQL
-
+##### 1. Install MySQL
 - **Windows**: Download and install MySQL Installer:
   [MySQL :: Download MySQL Installer](https://dev.mysql.com/downloads/installer/)
 - **Other Operating Systems**: Download and install MySQL Community Edition:
   [MySQL :: MySQL Community Downloads](https://dev.mysql.com/downloads/)
 
-### 2. Create Database and Tables
-
+##### 2. Create Database and Tables
 Run the following SQL script to create the database and tables:
 
 ```sql
@@ -762,20 +750,19 @@ Use a database modeling tool (such as MySQL Workbench or dbdiagram.io) to create
 4. Save SQL Script
 Save the above SQL script to a file named 2.2.sql.
 
-## 📦 Project Structure
-
+####  Project Structure
         mus_library/
         ├── 2.1.png          # Database diagram
         ├── 2.2.sql          # SQL script
         └── README.md
 
-## 📮 Primary Function and Screenshot
+#### Primary Function and Screenshot
 1. Database Diagram
 ![alt text](2023.10.15/2.1.png)
 2. SQL Script
 Saved as 2.2.sql file.
 
-## 📝 Project Description
+#### DESCRIPTION
 Database Diagram: Created using dbdiagram.io or MySQL Workbench.
 SQL Script: Contains DDL queries to create the database and tables.
 <!--2023.10.15文件 #HW2023.10.15.2 by 刘兴发 -->
