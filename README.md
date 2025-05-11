@@ -984,3 +984,149 @@ SQL Script: Contains DDL queries to create the database and tables.
    *Test result:*
    ![alt text](./asset/2023.08.27/image5.png)
 <!-- by 裴河权 -->
+
+## 📮 Project Main Function Description and Screenshots
+<!-- by 钟章鸿 -->
+### Tasks and Instructions for 2023.07.02 Files
+
+1. Implement the Tetrahedron Class
+
+    Functionality:
+        Describes the geometric properties of a regular tetrahedron (all faces are equilateral triangles) and provides methods to calculate its surface area and volume.
+    Parameters:
+        Parameter 1: Side length, type: float.
+    Methods:
+        surface():
+            Function: Calculates the surface area of the tetrahedron. Returns a float.
+        volume():
+            Function: Calculates the volume of the tetrahedron. Returns a float.
+    Test Method & Result:
+        ![alt text](./asset/2023.07.02/image-1.png)
+
+2. Implement the PowerMeter Class
+    Functionality:
+        Simulates a dual-tariff electricity meter (i.e., different unit prices depending on the time period).
+    Parameters:
+        tariff1: Unit price for rate 1 (default: 4.35).
+        tariff2: Unit price for rate 2 (default: 3.21).
+        tariff2_starts: Start time of rate 2 (default: 23:00).
+        tariff2_ends: End time of rate 2 (default: 07:00).
+    Methods:
+        __repr__():
+            Function: Returns the string representation of the power meter, showing the accumulated electricity usage (in kWh).
+        __str__():
+            Function: Returns the string representation of the power meter, showing the current month's and today's accumulated electricity cost.
+        meter(power):
+            Function: Accepts a usage value (power), calculates the corresponding electricity cost, updates the meter's status, and returns the cost of this usage (type: Decimal).
+    Test Method:
+        ```python
+            pm1 = PowerMeter()
+            pm1.meter(5)
+        ```
+    Test Result:
+        ![alt text](./asset/2023.07.02/image-2.png)
+
+3. Implement the ChessKing Class
+
+    Functionality:
+        Describes the behavior and rules of the King piece in international chess.
+
+    Methods:
+
+        __repr__():
+            Function: Returns the string representation of the King piece, used for debugging.
+
+        __str__():
+            Function: Returns the string representation of the King piece, used for printing.
+
+        is_turn_valid(new_square):
+            Function: Checks whether a move from the current square to the new square is valid for a King. Returns True if the move is legal, False otherwise.
+
+        turn(new_square):
+            Function: Performs the move from the current square to the target square.
+
+    Test Method & Result:
+        ![alt text](./asset/2023.07.02/image-3.png)
+
+4. Implement the CountableNouns Class
+
+    Functionality:
+        Handles the grammatical changes of countable nouns in Russian based on numeric context. In Russian, noun forms change depending on the number.
+
+    Methods:
+
+        pick(number, word):
+            Function: Based on the input number and base form of the noun, returns the correct noun form.
+
+        save_words(word1):
+            Function: Through interactive input, adds new noun forms to the internal words dictionary and words.csv file. If word1 is not provided, prompts the user for input.
+
+    Test Method & Result:
+        ![alt text](./asset/2023.07.02/image-4.png)
+
+### Tasks, Functions, and Usage under the Folder 2023.07.30:
+1. Implement the Point, Line, and Polygon Classes
+
+    Point Class
+
+        Functionality:
+
+            Stores coordinates of a point (x and y).
+
+            Provides read-only attributes.
+
+            Supports comparison and string representation.
+
+        Parameters:
+
+            x: float, y: float
+
+        Methods:
+
+            __eq__(): Compares two points (equal if both x and y are equal).
+
+            __str__() and __repr__(): Returns the string representation of the point.
+
+    Line Class
+
+        Functionality:
+             a line segment defined by two points (start and end), supports length calculation and dynamic updating of endpoints.
+
+        Parameters:
+
+            start: Point
+
+            end: Point
+
+        Methods:
+
+            length_calc(): Calculates the distance between the two points (i.e., the length of the line segment).
+
+            start(), end(): Endpoints can be dynamically updated but must be assigned as Point objects; otherwise, a TypeError is raised.
+
+            __str__() and __repr__(): Returns the string representation of the line.
+
+    Polygon Class
+
+        Functionality:
+            Represents a polygon composed of multiple line segments. Supports checking whether the polygon is closed and calculating its perimeter.
+
+        Methods:
+
+            is_closed():
+                Function: 
+                    Checks whether the polygon is closed:
+                    Whether the first and last segments are connected.
+                    Whether each segment’s endpoint connects to the next segment’s start point.
+
+            perimeter():
+                Function: 
+                    Calculates the total perimeter (sum of all segment lengths).
+                    If the polygon is not closed, raises a ValueError.
+
+    Test Method & Result:
+        ![alt text](./asset/2023.07.30/image-1.png)
+<!-- by 钟章鸿 -->
+
+
+
