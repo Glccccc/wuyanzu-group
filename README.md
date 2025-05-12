@@ -1351,3 +1351,247 @@ This program is used to merge cities and their corresponding values from multipl
 This program is used to handle a set of file names input by the user to ensure that the file names are unique when outputting. When using this program, users are required to input '; A list of separated file names. If there are duplicate file names, a sequence number will be added after the main file name, and the extension will remain unchanged. After processing, the processed file names will be output in alphabetical order, one per line.
 
 <!-- by 陈万程-->
+
+
+<!-- by 郑锐滨（For the folder 2023.05.28）-->
+
+# Python Utilities and Learning Toolkit
+
+## Description
+
+This project is a comprehensive collection of Python scripts and utility modules designed for both learning and practical use. It covers a wide range of topics, including file and directory operations, terminal message formatting, dynamic module importing, text search with context extraction, function call logging, and SI unit conversion. The project provides both main implementations and reference versions (`*_ref.py`) for comparative study and deeper understanding of different programming approaches.
+
+The `data` directory contains various supporting files, such as quiz question banks, configuration files, historical texts, images, and archives, enabling batch text processing, configuration management, and logging.
+
+## Features
+
+- **File and Directory Operations**: Quickly list all files in a directory for management and batch processing.
+- **Terminal Message Formatting**: Beautify and center important messages for enhanced terminal interaction.
+- **Dynamic Module Importing**: Load external Python files or configuration files at runtime for flexible program behavior.
+- **Text Search with Context Extraction**: Search for keywords in multiple text files and extract surrounding context for analysis.
+- **Function Call Logging**: Automatically log function calls, parameters, return values, and exceptions for debugging and tracing.
+- **SI Unit Conversion**: Convert numbers to appropriate SI prefixes for scientific computing and display.
+- **Data and Configuration Management**: Use files like `vars.py` and `conf.py` for quiz constants and application settings.
+
+## Installation
+
+1. **Clone or download** this repository, ensuring the `data` directory and its contents are intact.
+2. Make sure you have Python 3.10 or higher installed.
+
+## Usage
+
+This project consists of several independent Python scripts, each demonstrating a specific utility or programming technique. You can run each script directly from the command line, or import and use the utility functions in your own code.
+
+### 1. List Files in a Directory
+
+- **Script:** `1.py` or `1_ref.py`
+- **How to use:**
+  ```python
+  from 1 import list_files
+  print(list_files(r'./data'))
+  # Output: ('7MD9i.chm', 'conf.py', 'E3ln1.txt', ...)
+  ```
+  Or run interactively:
+  ```bash
+  python -i 1.py
+  >>> list_files(r'./data')
+  ```
+
+### 2. Beautify and Print Important Messages
+
+- **Script:** `2.py` or `2_ref.py`
+- **How to use:**
+  ```bash
+  python 2.py
+  ```
+  The script will prompt you to enter a message, then print it in a decorated, centered box in the terminal.
+  Example:
+  ```
+   Введите текст: PROGRAM TITLE
+
+   #==============================#
+   #                              #
+   #        PROGRAM TITLE         #
+   #                              #
+   #==============================#
+  ```
+
+- **Direct function usage:**
+  ```python
+  from utils import important_message
+  print(important_message('Hello World!'))
+  ```
+
+### 3. Dynamically Import a File
+
+- **Script:** `3.py` or `3_ref.py`
+- **How to use:**
+  ```bash
+  python 3.py
+  ```
+  The script will prompt for a file path. Enter the path to a Python file (e.g., `./data/conf.py`). If the file exists, it will be copied and imported as a module.
+
+### 4. Search for Keywords in Text Files
+
+- **Script:** `4.py` or `4_ref.py`
+- **How to use:**
+  ```python
+  from 4 import search_context
+  results = search_context('keyword', 'another', context=1)
+  for item in results:
+      print(item)
+  ```
+  - Searches all `.txt` files in the `data` directory for lines containing the given keywords.
+  - Returns a list of dictionaries with filename, line number, context, and matched text.
+
+### 5. Function Call Logging
+
+- **Script:** `5.py` or `5_ref.py`
+- **How to use:**
+  ```python
+  from 5 import logger
+  @logger
+  def add(a, b):
+      return a + b
+
+  add(1, 2)
+  # Each call is logged to data/function_calls.log
+  ```
+
+### 6. SI Unit Conversion
+
+- **Script:** `si_unit.py`
+- **How to use:**
+  ```python
+  from si_unit import SIUnit
+  v = SIUnit(1500, 'm')
+  print(v)           # Output: 1.5 km
+  print(v.target(0)) # Output: 1500 m
+  ```
+
+### Notes
+
+- Some scripts require user input in the terminal.
+- Some scripts depend on files in the `data` directory (e.g., `conf.py`, `.txt` files).
+- All utility functions can be imported and reused in your own Python projects.
+
+## Requirements or Dependencies
+
+- **Python Version**: 3.10 or higher recommended.
+- **Dependencies**: Only Python standard library modules are used (e.g., `pathlib`, `shutil`, `importlib`, `sys`, `datetime`). No third-party packages required.
+
+## File Structure
+
+```
+2023.05.28/
+│
+├── 1.py, 1_ref.py           # List files in a directory
+├── 2.py, 2_ref.py           # Beautify and print important messages
+├── 3.py, 3_ref.py           # Prompt for file path and dynamically import modules
+├── 4.py, 4_ref.py           # Search for keywords in text files with context
+├── 5.py, 5_ref.py           # Function call logging decorators
+├── si_unit.py               # SI unit conversion and formatting
+├── utils.py, utils_ref.py   # Utility functions (message formatting, dynamic import, etc.)
+├── 20230528-markdown.md     # Detailed documentation (in Chinese)
+├── # HW 2023.05.28.txt      # Assignment and usage instructions (in Russian)
+│
+└── data/
+    ├── vars.py              # Constants and settings for the quiz game
+    ├── conf.py              # Example configuration dictionary
+    ├── questions.quiz       # Quiz question bank
+    ├── *.txt                # Text files for search and analysis
+    ├── function_calls.log   # Log file for function calls
+    ├── *.chm, *.docx, *.jpg, *.zip # Miscellaneous data files
+    ├── c14KE/, mXbd9/       # Subdirectories with additional data files
+    └── __pycache__/         # Python cache files (auto-generated)
+```
+
+## License
+
+This project is intended for educational and practical use. Please refer to the repository or contact the author for licensing details. 
+
+<!-- by 郑锐滨（Ended for the folder on 2023.05.28）-->
+
+<!-- by 郑锐滨（For the folder 2023.05.28）-->
+
+# Recursive Algorithms and Data Processing Utilities
+
+## Description
+This project is a collection of Python scripts and data files designed for practicing and demonstrating recursive algorithms and data structure processing. The main focus is on recursive operations over nested data (such as lists, dictionaries, and trees), as well as utilities for generating and analyzing structured data, including random tree generation and batch name processing.
+
+## Features
+- Recursive calculation of the product of all numbers in arbitrarily nested iterables (lists, dictionaries, tuples, etc.)
+- Recursive counting of leaf nodes in arbitrarily nested tree-like lists
+- Recursive generation of random tree structures with variable depth and branching
+- Utilities for batch processing and generation of names and personal data (using provided `.txt` files)
+- All scripts use only the Python standard library (no third-party dependencies)
+
+## Installation
+1. Ensure you have Python 3.8 or higher installed on your system.
+2. Clone or download this repository to your local machine.
+3. No additional installation steps are required, as all scripts use only the standard library.
+
+## Usage
+### 1. Recursive Product Calculation (`1.1.py`)
+Calculates the product of all numbers in any nested iterable structure.
+
+**Example:**
+```python
+from 1.1 import product
+
+print(product([1, 2, 3]))  # 6.0
+print(product({'a': 2, 'b': [3, 4]}))  # 24.0
+print(product([10, 2, [1.5, [10, 2]]]))  # 600.0
+```
+
+### 2. Tree Leaf Counting (`1.2.py`)
+Counts the number of leaf nodes (non-list elements) in any nested list (tree structure).
+
+**Example:**
+```python
+from 1.2 import tree_leaves
+
+tree = [[['leaf', 'leaf'], 'leaf'], 'leaf']
+print(tree_leaves(tree))  # 4
+```
+
+### 3. Random Tree Generation (`1.3.py`)
+Recursively generates a random tree structure (nested lists) with 'leaf' as the leaf node.
+
+**Example:**
+```python
+from 1.3 import tree_generator
+
+tree = tree_generator()
+print(tree)
+```
+
+### 4. Name and Data Batch Processing
+The `.txt` files (`женские_имена.txt`, `мужские_имена_отчества.txt`, `фамилии.txt`) contain lists of Russian female names, male names with patronymics, and surnames, respectively. These can be used for batch data generation or analysis in your own scripts.
+
+## Requirements / Dependencies
+- Python 3.8+
+- No third-party packages required (standard library only)
+
+## File Structure
+```
+2023.06.04/
+├── 1.1.py                  # Recursive product calculation
+├── 1.2.py                  # Recursive tree leaf counting
+├── 1.3.py                  # Random tree structure generator
+├── женские_имена.txt       # Russian female names
+├── мужские_имена_отчества.txt # Russian male names and patronymics
+├── фамилии.txt             # Russian surnames
+├── 2023.06.04_readme.md    # Original project readme (in Chinese)
+├── # HW 2023.06.04_1.txt   # Homework/task description 1
+├── # HW 2023.06.04_2.txt   # Homework/task description 2
+├── # HW 2023.06.04_3.txt   # Homework/task description 3
+├── 3.1.png                 # Screenshot or image file
+```
+
+---
+
+For more details, see the comments and docstrings in each script, and refer to the original Chinese readme for further explanations. 
+
+
+<!-- by 郑锐滨（Ended for the folder on 2023.06.04）-->

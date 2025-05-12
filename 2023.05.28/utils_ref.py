@@ -1,17 +1,17 @@
-from pathlib import Path
-from shutil import get_terminal_size as gts, copy2
-from sys import path
-from types import ModuleType
+from pathlib import Path  # 导入Path用于路径处理
+from shutil import get_terminal_size as gts, copy2  # 导入终端尺寸获取和文件复制
+from sys import path  # 导入sys.path
+from types import ModuleType  # 导入ModuleType用于类型注解
 
-import data.vars as data
+import data.vars as data  # 导入数据模块
 
-
-ROOT_DIR = Path(path[0])
-DATA_DIR = ROOT_DIR / 'data'
+ROOT_DIR = Path(path[0])  # 项目根目录
+DATA_DIR = ROOT_DIR / 'data'  # data目录路径
 
 
 # для задачи 1
 def important_message(text) -> str:
+    # 获取终端宽度和边距
     width, padding = gts()[0] - 1, 2
     just = width - padding*2 - 2
 
@@ -42,8 +42,12 @@ def important_message(text) -> str:
 
 
 # для задачи 3
+# 动态导入conf.py模块
+# file_path: 需要导入的文件路径
+# 返回：导入的模块对象
+
 def load_file(file_path) -> ModuleType:
-    copy2(file_path, ROOT_DIR)
-    import conf
-    return conf
+    copy2(file_path, ROOT_DIR)  # 复制文件到根目录
+    import conf  # 动态导入conf模块
+    return conf  # 返回模块对象
 
