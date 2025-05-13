@@ -187,6 +187,95 @@ wuyanzu-group/
 
 ### Tasks and Instructions for 2023.05.21 Files
 
+1. **Implement the `pick_resistors` function**
+
+    *Function:* Select the closest nominal resistance values from all resistor series for a given resistance value.
+
+    *Parameters:*
+    - An integer representing the resistance value, ranging from 100 to 999 (inclusive).
+
+    *Return Value:*
+    - A dictionary or None. The keys of the dictionary are 'E6', 'E12', 'E24', 'E48', 'E96', and the values are tuples containing one or more integers representing the selected nominal resistance values.
+
+    *Test Method:*
+    ```python
+    pick_resistors(112)
+    ```
+
+    *Test Result:*
+    ![Test Result](asset/2023.05.21/image-1.png)
+
+2. **Implement the `deck` generator function**
+
+    *Function:* Create a deck of cards in a specific order.
+
+    *Parameters:* None.
+
+    *Return Value:*
+    - A generator object. On each iteration, it returns a tuple containing an integer (representing the card's value: 2 to 14, where 11 is Jack, 12 is Queen, 13 is King, and 14 is Ace) and a string (representing the card's suit: ' черви ' (hearts), ' бубны ' (diamonds), ' пики ' (spades), ' трефы ' (clubs)).
+
+    *Test Method:*
+    ```python
+    list(deck())
+    ```
+
+    *Test Result:*
+    ![Test Result](asset/2023.05.21/image-2.png)
+
+3. **Implement the `math_function_resolver` higher-order function**
+
+    *Function:* Calculate the rounded values of various mathematical functions.
+
+    *Parameters:*
+    - A mathematical function passed as a positional argument, which should accept a positional argument x.
+    - Any number of positional arguments representing the x values for the mathematical function.
+    - A boolean keyword argument to switch the return value type. The default is False (returning float values). If True, it returns strings.
+
+    *Return Value:*
+    - A list containing the calculated values of the mathematical function based on the x values. The type of the values depends on the keyword argument setting.
+
+    *Test Method:*
+    ```python
+    math_function_resolver(lambda x: 0.5*x + 2, *range(1, 10))
+    ```
+
+    *Test Result:*
+    ![Test Result](asset/2023.05.21/image-3.png)
+
+4. **Implement the `repeat` decorator**
+
+    *Function:* Make the decorated function execute ten times.
+
+    *Parameters:*
+    - The function to be decorated.
+
+    *Return Value:*
+    - The decorated function object. Executing this object once will cause the decorated function to execute ten times.
+
+    *Test Method:*
+    ```python
+    >>> @repeat(5)
+    ... def testing_function():
+    ...     print('python')
+    ...
+    >>>
+    >>> testing_function()
+    ```
+
+    *Test Result:*
+    ![Test Result](asset/2023.05.21/image-4.png)
+
+5. **Implement the `logger` decorator**
+
+    *Function:* Log the calls of the decorated function, including the function name, passed arguments, and default values. If an exception occurs, log the exception information.
+
+    *Parameters:*
+    - The function to be decorated.
+
+    *Return Value:*
+    - The decorated function object. When executed, it logs the relevant call information and exception information (if any) to the standard output stream.
+
+    <!-- by 管立超 -->
 
 ### Tasks and Functional Descriptions for April 9, 2023:
 
